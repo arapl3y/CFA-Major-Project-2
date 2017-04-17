@@ -29,6 +29,8 @@ group :test do
 end
 
 group :development do
+  gem 'guard-rspec', require: false
+  gem 'guard-livereload', '~> 2.5', require: false
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
