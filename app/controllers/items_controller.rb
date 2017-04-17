@@ -14,10 +14,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user_id = current_user.id
+
 
     if @item.save
+      flash[:notice] = "Item has been posted successfully."
       redirect_to @item
     else
+      flash[:notice] = "Item cannot be posted at this time."
       render 'new'
     end
   end
