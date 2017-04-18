@@ -17,8 +17,8 @@ RSpec.describe Item do
     expect(item).not_to be_valid
   end
 
-  it "is invalid without a user id" do
-    item = FactoryGirl.build(:item, user_id: nil)
-    expect(item).not_to be_valid
+  it "is valid without a user id" do
+    item = FactoryGirl.build(:item)
+    expect(item).to be_valid
   end
 end
