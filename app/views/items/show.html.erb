@@ -1,5 +1,6 @@
 
 <%= image_tag @item.image.url(:medium) %>
+<br>
 <%= link_to "Download", @item.image.url(:original, false) %>
 <h1><%= @item.title %></h1>
 <p><%= @item.description %></p>

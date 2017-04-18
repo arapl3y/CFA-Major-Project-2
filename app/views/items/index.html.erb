@@ -9,4 +9,4 @@
 <% end %>
 
 <%= link_to 'New Item', new_item_path %>
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<%= link_to "Logout: #{current_user.username}", destroy_user_session_path, method: :delete %>

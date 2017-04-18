@@ -28,9 +28,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    authorize @item
   end
 
   def update
+    authorize @item
     if @item.update(item_params)
       redirect_to @item
     else
