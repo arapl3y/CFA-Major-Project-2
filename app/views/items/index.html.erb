@@ -1,12 +1,9 @@
-<h1>Items Board</h1>
-
-<% @items.each do |item| %>
-  <h2><%= link_to item.title, item %></h2>
-  <p><%= item.description %></p>
-  <p><%= item.image.url %></p>
+<h1 class="text-center">Source Board</h1>
 
 
-<% end %>
-
-<%= link_to 'New Item', new_item_path %>
-<%= link_to "Logout: #{current_user.username}", destroy_user_session_path, method: :delete %>
+  <% @items.each do |item| %>
+    <div class="jumbotron text-center">
+      <h2><%= link_to item.title, item %></h2>
+      <p><%= item.description %></p>
+    </div>
+  <% end %>
