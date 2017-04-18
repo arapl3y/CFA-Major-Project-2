@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :user
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   validates :title, presence: true
   validates :description, presence: true
 
