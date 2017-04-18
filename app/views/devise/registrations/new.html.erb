@@ -21,6 +21,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :is_informant %>
+    <%= f.radio_button :is_informant, true, checked: true %>
+    <%= f.label 'Journalist' %>
+    <%= f.radio_button :is_informant, false, checked: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
