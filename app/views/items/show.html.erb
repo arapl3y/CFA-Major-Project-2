@@ -1,7 +1,7 @@
 
 <%= image_tag @item.image.url(:medium) %>
 <br>
-<%= link_to "Download", @item.image.url(:original, false) %>
+<a href="<%= asset_path @item.image.url %>" download>Download HTML</a>
 <h1><%= @item.title %></h1>
 <p><%= @item.description %></p>
 <p><%= @item.user.username %></p>
