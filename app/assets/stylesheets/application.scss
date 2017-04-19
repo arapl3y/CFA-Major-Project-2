@@ -3,14 +3,22 @@
 
 // General styles
 
+body {
+  width: 100%;
+  background: #283048;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  color: ghostwhite;
+}
 
 // Navigation
 
 nav.navbar-inverse {
+  background: transparent;
   border-radius: 0;
-  background: #283048;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: none;
   a.navbar-brand {
     color: ghostwhite;
@@ -36,11 +44,16 @@ nav.navbar-inverse {
 .jumbotron {
   padding: 40px 40px 40px 120px;
   border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-  transition-property: color,background-color,box-shadow,transform;
+  // box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  // transition-property: color,background-color,box-shadow,transform;
   transition-duration: .15s;
   &:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+  // box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
   }
+}
+
+.source-board-header {
+  margin-bottom: 2em;
+  text-align: center;
 }
