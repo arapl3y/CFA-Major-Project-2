@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // General styles
 
@@ -51,9 +53,25 @@ nav.navbar-inverse {
   transform: translateY(-4px);
   // box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
   }
+  .close-btn {
+    float: right;
+    font-size: 2em;
+    color: #3e3b3e;
+    position: relative;
+    top: -35px;
+    right: -30px;
+  }
 }
+
+// Source Board
 
 .source-board-header {
   margin-bottom: 2em;
   text-align: center;
+}
+
+// Dashboard
+
+.avatar {
+  border-radius: 10px;
 }

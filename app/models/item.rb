@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 
-  has_attached_file :image,  styles: { medium: '300x300>', thumb: '150x150#' }
-  validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  has_attached_file :document
+  # Permitted file types
+  validates_attachment :document, :content_type => {:content_type => %w(image/jpeg image/jpg image/png application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document audio/mpeg audio/mp3 audio/x-m4a)}
 end

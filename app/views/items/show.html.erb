@@ -1,12 +1,20 @@
+<div class="jumbotron">
+  <div class="row">
+    <%= link_to icon('times'), items_path, class: 'close-btn' %>
+  </div>
+  <div class="row">
+    <%= image_tag @item.document.url, class: 'img-responsive' %>
+    <br>
+    <a href="<%= asset_path @item.document.url %>" class="btn btn-success" download>Download</a>
 
-<%= image_tag @item.image.url(:medium) %>
-<br>
-<a href="<%= asset_path @item.image.url %>" download>Download HTML</a>
-<h1><%= @item.title %></h1>
-<p><%= @item.description %></p>
-<p><%= @item.user.username %></p>
 
+    <h1><%= @item.title %></h1>
+    <p><%= @item.description %></p>
+    <p>Uploaded by: <b><%= @item.user.username %></b></p>
+    <p><%= @item.created_at.to_date %></p>
 
-<%= link_to 'Home', root_path %>
-<%= link_to 'Edit', edit_item_path(@item) %>
-<%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure? '} %>
+    <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure? '}, class: 'btn btn-danger' %>
+
+  </div>
+</div>

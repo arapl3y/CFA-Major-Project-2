@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
   def home
   end
 
+  def dashboard
+  end
+
   def show
   end
 
@@ -51,7 +54,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :image)
+    params.require(:item).permit(:title, :description, :document)
   end
 
   def find_item
