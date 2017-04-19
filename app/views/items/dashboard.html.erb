@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row profile">
   <div class="col-xs-6">
     <% if current_user.is_informant? %>
     <%= image_tag('hacker-dog.jpg', class: 'avatar img-responsive') %>
@@ -16,16 +16,21 @@
 </div>
 
 <% if current_user.is_informant? %>
-<div class="row">
-  <div class="col-xs-12">
-    <h1>New Item</h1>
-    <%= render 'form' %>
+  <div class="row widgets">
+    <div class="col-xs-6">
+      <h1>New Item</h1>
+      <%= render 'form' %>
+    </div>
+    <div class="col-xs-6">
+    <h1>Uploaded Items</h1>
+      <% if current_user.is_informant? %>
+        <%= render 'partials/informant-table' %>
+      <% else %>
+        <%= render 'partials/journalist-table' %>
+      <% end %>
+    </div>
   </div>
-</div>
 <% end %>
 <br>
-<% if current_user.is_informant? %>
-<%= render 'partials/informant-table' %>
-<% else %>
-<%= render 'partials/journalist-table' %>
-<% end %>
+
+
