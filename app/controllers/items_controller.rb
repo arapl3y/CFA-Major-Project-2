@@ -10,6 +10,8 @@ class ItemsController < ApplicationController
   end
 
   def dashboard
+    @item = Item.new
+    @items = Item.all
   end
 
   def show

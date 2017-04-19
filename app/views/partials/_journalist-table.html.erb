@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Requested</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @items.first.title %></td>
+      <td>Requested</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><%= @items.last.title %></td>
+      <td>Pending</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><%= @items.find_by(title: 'pdf').title %></td>
+      <td>Approved <a href="<%= asset_path @item.document.url %>" download>Download</a></td>
+    </tr>
+   </tbody>
+ </table>

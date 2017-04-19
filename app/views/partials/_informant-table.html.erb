@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Uploaded</th>
+      <th>Status</th>
+      <th>Approved?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= @items.first.title %></td>
+      <td>Requested</td>
+      <td><%= link_to 'Approve', '#', class: 'btn btn-success' %></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><%= @items.last.title %></td>
+      <td>Pending</td>
+      <td><%= link_to 'Approve', '#', class: 'btn btn-success' %></td>
+    </tr>
+   </tbody>
+ </table>
