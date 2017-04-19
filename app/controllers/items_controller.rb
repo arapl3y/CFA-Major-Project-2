@@ -25,7 +25,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user_id = current_user.id
 
-
     if @item.save
       flash[:notice] = "Item has been posted successfully."
       redirect_to @item

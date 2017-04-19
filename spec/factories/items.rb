@@ -5,4 +5,8 @@ FactoryGirl.define do
     f.title { Faker::File.file_name }
     f.description { Faker::Hacker.say_something_smart }
   end
+
+  factory :invalid_item, parent: :item do |f|
+    f.title nil
+  end
 end
