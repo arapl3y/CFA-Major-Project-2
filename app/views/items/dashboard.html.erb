@@ -22,12 +22,14 @@
       <%= render 'form' %>
     </div>
     <div class="col-xs-6">
-    <h1>Uploaded Items</h1>
-      <% if current_user.is_informant? %>
-        <%= render 'partials/informant-table' %>
-      <% else %>
-        <%= render 'partials/journalist-table' %>
-      <% end %>
+      <h1>Uploaded Items</h1>
+      <%= render 'partials/informant-table' %>
+    </div>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= render 'partials/journalist-table' %>
     </div>
   </div>
 <% end %>

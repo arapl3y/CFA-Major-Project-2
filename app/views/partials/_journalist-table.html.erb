@@ -1,4 +1,5 @@
-<table class="table table-bordered">
+<div class="padded-table">
+<table class="table table-borderless">
   <thead>
     <tr>
       <th>#</th>
@@ -7,20 +8,19 @@
     </tr>
   </thead>
   <tbody>
+  <% @items.each do |item| %>
     <tr>
-      <th scope="row">1</th>
-      <td><%= @items.first.title %></td>
-      <td>Requested</td>
+      <th scope="row"><%= item.id %></th>
+      <td><%= link_to item.title, item_path(item) %></td>
+      <% if item.requested %>
+      <!-- And approved -->
+        <td>Approved</td>
+      <% else %>
+        <td>Requested</td>
+      <% end %>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td><%= @items.last.title %></td>
-      <td>Pending</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><%= @items.find_by(title: 'pdf').title %></td>
-      <td>Approved <a href="<%= asset_path @item.document.url %>" download>Download</a></td>
-    </tr>
+    <% end %>
    </tbody>
  </table>
+</div>

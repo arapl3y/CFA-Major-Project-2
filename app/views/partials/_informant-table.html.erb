@@ -9,18 +9,22 @@
     </tr>
   </thead>
   <tbody>
+    <% @items.each do |item| %>
     <tr>
-      <th scope="row">1</th>
-      <td><%= @items.first.title %></td>
-      <td>Requested</td>
+
+    <% if item.user == current_user %>
+      <th scope="row"><%= item.id %></th>
+      <td><%= link_to item.title, item_path(item) %></td>
+      <% if item.requested %>
+        <td>Requested</td>
+      <% else %>
+        <td>Pending</td>
+      <% end %>
       <td><%= link_to 'Approve', '#', class: 'btn btn-success' %></td>
+    <% end %>
+
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><%= @items.last.title %></td>
-      <td>Pending</td>
-      <td><%= link_to 'Approve', '#', class: 'btn btn-success' %></td>
-    </tr>
+    <% end %>
    </tbody>
  </table>
 </div>
