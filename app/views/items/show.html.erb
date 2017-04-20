@@ -2,8 +2,15 @@
   <div class="row">
     <%= link_to icon('times'), items_path, class: 'close-btn' %>
   </div>
+
   <div class="row">
-    <%= image_tag @item.document.url, class: 'img-responsive' %>
+
+    <% if @item.document.content_type == "image/jpeg" %>
+      <%= image_tag @item.document.url, class: 'img-responsive' %>
+    <% else %>
+      <p><%= @item.document.original_filename %></p>
+    <% end %>
+
     <br>
     <a href="<%= asset_path @item.document.url %>" class="btn btn-success" download>Download</a>
 
