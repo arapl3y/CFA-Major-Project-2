@@ -1,5 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_many :item_requests
+  # users who has requested this item
+  has_many :requesters, through: :item_requests, source: :user
 
   extend FriendlyId
   friendly_id :title, use: :slugged

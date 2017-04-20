@@ -11,7 +11,15 @@ class ItemsController < ApplicationController
 
   def dashboard
     @item = Item.new
-    @items = Item.all
+    @items = current_user.items
+    # users who have requested items that this informant has uploaded
+    # @items = []
+    # current_user.items.each do |item|
+    #   @items.push(item.requesters)
+    # end
+    # @items_informant = current_user.items.first.requesters
+    # items that a journalist user has requested []
+    # @items_journalist = current_user.requested_items
   end
 
   def show

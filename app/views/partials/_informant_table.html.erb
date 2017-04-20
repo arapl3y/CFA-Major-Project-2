@@ -1,0 +1,40 @@
+<div class="padded-table">
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Uploaded</th>
+        <th>Status</th>
+        <th>Requesters</th>
+        <th>Approve</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+      <tr>
+
+        <th scope="row"><%= item.id %></th>
+        <td><%= link_to item.title, item_path(item) %></td>
+
+
+        <% if item.item_requests.any? %>
+        <td>Requested</td>
+
+        <td>
+        <%= select_tag "item_requesters", options_for_select(item.requesters.map {|requester| requester.username }), class: 'form-control' %>
+        </td>
+
+      <td>
+        <%= link_to icon('check'), '#', class: 'btn btn-success' %>
+      </td>
+      <% else %>
+      <td>Posted</td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+

@@ -10,23 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419130206) do
+ActiveRecord::Schema.define(version: 20170420042448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "item_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_requests_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_item_requests_on_user_id", using: :btree
+  end
+
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "user_id"
     t.string   "slug"
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
-    t.boolean  "requested",             default: false
     t.index ["slug"], name: "index_items_on_slug", unique: true, using: :btree
   end
 
@@ -48,4 +56,6 @@ ActiveRecord::Schema.define(version: 20170419130206) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "item_requests", "items"
+  add_foreign_key "item_requests", "users"
 end
