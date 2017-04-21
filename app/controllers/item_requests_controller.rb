@@ -16,10 +16,10 @@ class ItemRequestsController < ApplicationController
   end
 
   def update
-    find item request through id
-    update attributes approved to true
-    if item request saves redirect to dashboard
-    else redirect to back with error msg
+    # find item request through id
+    # update attributes approved to true
+    # if item request saves redirect to dashboard
+    # else redirect to back with error msg
   end
 
 end
