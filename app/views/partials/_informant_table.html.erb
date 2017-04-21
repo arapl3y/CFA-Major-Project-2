@@ -27,7 +27,15 @@
 
         <%= form_for :item_request, url: update_item_requests_path, method: :patch do |f| %>
           <td>
-            <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+            <!-- Find if any item_requests have been approved -->
+            <% if item.item_requests.any? { |r| r.approved } %>
+              <!-- If there are, find that record and only show that one so that you can't approve multiple -->
+              <%= item.item_requests.where(approved: true).first.user.username %>
+              <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
+            <% else %>
+              <!-- If none are approved, choose which you would like to approve -->
+              <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+            <% end %>
             <%= f.hidden_field :item_id, value: item.id %>
           </td>
 
