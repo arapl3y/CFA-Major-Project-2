@@ -5,17 +5,30 @@
 
   <div class="row">
 
-    <% if @item.document.content_type == "image/jpeg" %>
+    <!-- only approved for user or for all users? -->
+    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) && @item.document.content_type == "image/jpeg" %>
+
       <%= image_tag @item.document.url, class: 'img-responsive' %>
+
+      <% if @item.document.content_type != "image/jpeg" %>
+
+        <p><%= @item.document.original_filename %></p>
+
+      <% end %>
+
+      <br>
+
+      <a href="<%= asset_path @item.document.url %>" class="btn btn-success" download>Download</a>
+
     <% else %>
+
       <p><%= @item.document.original_filename %></p>
+
+      <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-info' %>
+
     <% end %>
 
-    <br>
 
-    <%= link_to 'Request', request_item_path(@item), method: :put %>
-
-    <a href="<%= asset_path @item.document.url %>" class="btn btn-success" download>Download</a>
 
 
 

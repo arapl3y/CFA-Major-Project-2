@@ -9,6 +9,7 @@ Rails.application.routes.draw do
                            as: :request_item
 
   resources :items
-  resources :item_requests, only: [:create, :update]
-
+  # resources :item_requests, only: [:create, :update]
+  post 'item_requests', to: 'item_requests#create'
+  patch 'update_item_requests', to: 'item_requests#update'
 end

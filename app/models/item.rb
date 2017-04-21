@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :item_requests
+  has_many :item_requests, dependent: :destroy
   # users who has requested this item
   has_many :requesters, through: :item_requests, source: :user
 

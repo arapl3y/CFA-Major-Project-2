@@ -16,10 +16,20 @@ class ItemRequestsController < ApplicationController
   end
 
   def update
-    # find item request through id
-    # update attributes approved to true
-    # if item request saves redirect to dashboard
-    # else redirect to back with error msg
-  end
 
+    @item_request = ItemRequest.find_by(user_id: params[:item_request][:user_id], item_id: params[:item_request][:item_id])
+
+    @item_request.toggle(:approved)
+
+    if @item_request.save && @item_request.approved?
+      flash[:notice] = "Item request approved."
+      redirect_to dashboard_path
+    elsif @item_request.save && !@item_request.approved
+      flash[:notice] = "Item request disapproved."
+      redirect_to dashboard_path
+    else
+      flash[:notice] = "Item cannot be approved at this time."
+      redirect_to :back
+    end
+  end
 end

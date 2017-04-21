@@ -11,11 +11,15 @@
 
     <% current_user.requested_items.each do |item| %>
       <tr>
-      <%# if item.requested_items %>
+      <% if item.item_requests.any? %>
         <th scope="row"><%= item.id %></th>
         <td><%= link_to item.title, item_path(item) %></td>
+        <% if item.item_requests.find_by(approved: true) %>
+          <td>Approved</td>
+        <% else %>
           <td>Requested</td>
-      <%# end %>
+        <% end %>
+      <% end %>
       </tr>
       <tr>
     <% end %>

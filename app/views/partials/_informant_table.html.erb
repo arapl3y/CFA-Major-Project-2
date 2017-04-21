@@ -18,17 +18,27 @@
 
 
         <% if item.item_requests.any? %>
-        <td>Requested</td>
+          <% if item.item_requests.find_by(approved: true) %>
+            <td>Approved</td>
+          <% else %>
+            <td>Requested</td>
+          <% end %>
 
-        <td>
-        <%= form_for request_item_path(item) do |f| %>
-          <%= f.select "item_requesters", options_for_select(item.requesters.map {|requester| requester.username }), class: 'form-control' %>
-        </td>
 
-      <td>
-          <%= f.submit 'Approve', class: 'btn btn-success' %>
+        <%= form_for :item_request, url: update_item_requests_path, method: :patch do |f| %>
+          <td>
+            <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+            <%= f.hidden_field :item_id, value: item.id %>
+          </td>
+
+          <td>
+            <% if item.item_requests.any? { |r| r.approved } %>
+              <%= f.submit 'Disapprove', class: 'btn btn-danger' %>
+            <% else %>
+              <%= f.submit 'Approve', class: 'btn btn-success' %>
+            <% end %>
+          </td>
         <% end %> <!-- end form -->
-      </td>
       <% else %>
       <td>Posted</td>
       <% end %> <!-- end if statement -->
