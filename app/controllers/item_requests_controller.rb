@@ -1,7 +1,4 @@
 class ItemRequestsController < ApplicationController
-  def new
-    @item_request = ItemRequest.new
-  end
 
   def create
     @item_request = ItemRequest.new
@@ -17,4 +14,12 @@ class ItemRequestsController < ApplicationController
       redirect_to @item
     end
   end
+
+  def update
+    find item request through id
+    update attributes approved to true
+    if item request saves redirect to dashboard
+    else redirect to back with error msg
+  end
+
 end

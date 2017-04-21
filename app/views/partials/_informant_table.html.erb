@@ -21,17 +21,19 @@
         <td>Requested</td>
 
         <td>
-        <%= select_tag "item_requesters", options_for_select(item.requesters.map {|requester| requester.username }), class: 'form-control' %>
+        <%= form_for request_item_path(item) do |f| %>
+          <%= f.select "item_requesters", options_for_select(item.requesters.map {|requester| requester.username }), class: 'form-control' %>
         </td>
 
       <td>
-        <%= link_to icon('check'), '#', class: 'btn btn-success' %>
+          <%= f.submit 'Approve', class: 'btn btn-success' %>
+        <% end %> <!-- end form -->
       </td>
       <% else %>
       <td>Posted</td>
-      <% end %>
+      <% end %> <!-- end if statement -->
     </tr>
-    <% end %>
+    <% end %> <!-- end loop -->
   </tbody>
 </table>
 </div>
