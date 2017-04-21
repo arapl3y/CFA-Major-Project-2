@@ -103,3 +103,17 @@ nav.navbar-inverse {
   margin-bottom: 3em;
   text-align: center;
 }
+
+// Sign up and Login
+
+.input-group-addon {
+  text-align: left;
+  padding: 5px;
+  label[for="user_Informant"],
+  label[for="user_Journalist"] {
+  padding: 5px;
+  margin: 0 auto;
+  }
+}
+
+

@@ -1,36 +1,48 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="well">
+        <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+          <div class="field form-group">
+            <%= f.label :username %><br />
+            <%= f.text_field :username, autofocus: true, class: 'form-control' %>
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class="field form-group">
+            <span class="input-group-addon">
+            <%= f.label 'Informant' %>
+            <%= f.radio_button :is_informant, true, checked: true, class: 'btn btn-primary' %>
+            <%= f.label 'Journalist' %>
+            <%= f.radio_button :is_informant, false, checked: false, class: 'btn btn-primary' %>
+            </span>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Sign up", class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+
+      </div>
+      <div class="well text-center">
+      Already have an account? <%= render 'devise/shared/links' %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Informant' %>
-    <%= f.radio_button :is_informant, true, checked: true %>
-    <%= f.label 'Journalist' %>
-    <%= f.radio_button :is_informant, false, checked: false %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
