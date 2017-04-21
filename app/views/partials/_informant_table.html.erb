@@ -43,9 +43,9 @@
 
           <td>
             <% if item.item_requests.any? { |r| r.approved } %>
-              <%= f.submit 'Disapprove', class: 'btn btn-danger' %>
+              <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
             <% else %>
-              <%= f.submit 'Approve', class: 'btn btn-success' %>
+              <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
             <% end %>
           </td>
 

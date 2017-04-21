@@ -6,23 +6,82 @@
 // General styles
 
 body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100%;
   background: #283048;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+
+
 h1 {
   color: ghostwhite;
+}
+
+.text-white {
+  color: ghostwhite;
+}
+
+// Buttons
+.btn {
+  background: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  min-width: 155px;
+  &:hover {
+    background: none;
+    color: #fff;
+    border-color: #e28520;
+    background-color: #e28520;
+  }
+}
+
+.btn-white {
+  border-color: #fff !important;
+  color: #fff !important;
+  &:hover {
+    background: #fff;
+    color: #333333 !important;
+    border-color: #fff;
+  }
+}
+
+.btn-xs {
+  padding: 8px 24px !important;
+  font-size: 12px !important;
+}
+
+.btn-primary {
+  border-radius: 25px;
+  display: inline-block;
+  padding: 14px 28px 13px 28px;
+  line-height: 1;
+  border: 2px solid #e28520;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e28520;
+}
+
+.btn-filled {
+    background: #e28520;
+    color: #fff;
 }
 
 // Navigation
 
 nav.navbar-inverse {
+  z-index: 1000;
   background: transparent;
   border-radius: 0;
   border: none;
+  padding: 1em .5em;
   a.navbar-brand {
+    font-size: 1.8em;
     color: ghostwhite;
     text-transform: uppercase;
     letter-spacing: -1px;
@@ -30,7 +89,17 @@ nav.navbar-inverse {
   }
   .navbar-nav {
     li a {
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 13px;
       color: ghostwhite;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      transition: all .5s ease;
+      padding-bottom: 40px;
+      display: inline-block;
+      line-height: 14px;
       &:hover {
         color: #9d9d9d;
         background: transparent;
@@ -38,6 +107,49 @@ nav.navbar-inverse {
     }
     .active a {
       background-color: #859398;
+    }
+  }
+}
+
+// Home Page
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-container {
+  z-index: 3;
+  position: relative;
+  padding-top: 30%;
+  h1 {
+    font-size: 2.8em;
+    color: ghostwhite;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
+  h3 {
+    font-weight: 400;
+  }
+  a.btn {
+    margin-top: 24px;
+    margin-right: 16px;
+    a.btn:last-child {
+      margin-right: 0;
     }
   }
 }
@@ -113,6 +225,32 @@ nav.navbar-inverse {
   label[for="user_Journalist"] {
   padding: 5px;
   margin: 0 auto;
+  }
+}
+
+// Media Queries
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg-video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg-video {
+     width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background-image: url("boxplant.png") center center / cover no-repeat;
+  }
+
+  .fullscreen-bg-video {
+    display: none;
   }
 }
 
