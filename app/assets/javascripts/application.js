@@ -17,7 +17,7 @@
 //= require_tree .
 
 
-$(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function() {
 
   // Flash button fade out
   ('.alert').delay(1000).fadeOut(4000);
@@ -36,14 +36,14 @@ $(document).on('turbolinks:load', function(){
   var submitBtn = $('#form-submit-btn');
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
 
-  submitBtn.click(function(event){
+  submitBtn.click(function(event) {
     event.preventDefault();
     submitBtn.val('Processing').prop('disabled', true);
 
     var ccNum = $('#card_number').val(),
-        cvcNum = $('#card_code').val(),
-        expMonth = $('#card_month').val(),
-        expYear = $('#card_year').val();
+      cvcNum = $('#card_code').val(),
+      expMonth = $('#card_month').val(),
+      expYear = $('#card_year').val();
 
     var error = false;
 
@@ -75,7 +75,7 @@ $(document).on('turbolinks:load', function(){
     return false;
   });
 
-  function stripeResponseHandler(status, response){
+  function stripeResponseHandler(status, response) {
     var token = response.id;
     proForm.append($('<input type="hidden" name="user[stripe_card_token">').val(token));
     proForm.get(0).submit();
