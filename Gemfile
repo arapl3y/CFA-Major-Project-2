@@ -21,6 +21,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'pundit'
 gem 'friendly_id', '~> 5.1.0'
 gem 'stripe', '1.48.0'
+gem 'figaro', '1.1.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
