@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-     devise_parameter_sanitizer.permit(:sign_up, keys: [:is_informant])
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:stripe_card_token, :username, :password, :password_confirmation, :is_informant) }
   end
 end

@@ -20,7 +20,7 @@
 $(document).on('turbolinks:load', function() {
 
   // Flash button fade out
-  ('.alert').delay(1000).fadeOut(4000);
+  $('.alert').delay(1000).fadeOut(4000);
 
   // Home page button animations
   $('#button1').on('click', function() {
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', function() {
 
   // Stripe
   var proForm = $('#pro_form');
-  var submitBtn = $('#form-submit-btn');
+  var submitBtn = $('#form-signup-btn');
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
 
   submitBtn.click(function(event) {

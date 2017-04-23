@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
 
   root 'items#home'
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   get '/dashboard', to: 'items#dashboard'
 
