@@ -29,6 +29,12 @@ h1 {
   color: ghostwhite;
 }
 
+.hide {
+  opacity: 0;
+}
+
+
+
 // Buttons
 .btn {
   background: none;
@@ -105,6 +111,41 @@ h1 {
   }
 }
 
+// Button animations
+.home-container a {
+  position: absolute;
+  left: 44%;
+  top: 95%;
+  margin-top: -50px;
+  margin-left: -50px;
+  display: inline-block
+}
+
+#button3, #button2 {
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+
+#button1 {
+  z-index: 10;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  &:hover {
+    background: $cool-green;
+    color: ghostwhite;
+  }
+}
+
+.animateToRight {
+  -webkit-transform: translate(100px);
+  transform: translate(100px);
+}
+
+.animateToLeft {
+  -webkit-transform: translate(-100px);
+  -webkit-transform: translate(-100px);
+}
+
 // Navigation
 
 nav.navbar-inverse {
@@ -165,9 +206,15 @@ nav.navbar-inverse {
 }
 
 .home-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 200px;
+  right: 0;
+  width: 400px;
+  height: 200px;
+  margin: auto;
   z-index: 3;
-  position: relative;
-  padding-top: 20%;
   h1 {
     font-size: 2.8em;
     color: ghostwhite;

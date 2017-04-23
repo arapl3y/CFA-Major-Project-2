@@ -18,5 +18,14 @@
 
 
 $(document).on('turbolinks:load', function(){
+  // Flash button fade out
   $('.alert').delay(1000).fadeOut(4000);
+
+  // Home page button animations
+  $('#button1').on('click', function() {
+    $('#button2').addClass('animateToRight');
+    $('#button3').addClass('animateToLeft');
+    $('#button1').addClass('hide');
+    return false;
+  });
 });

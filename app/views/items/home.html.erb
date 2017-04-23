@@ -6,29 +6,20 @@
     <div class="home-container">
       <div class="row">
         <div class="col-xs-12 text-center">
+
           <%= image_tag('flask-icon.png', class: 'flask-logo img-responsive') %>
           <h1>Secret Source</h1>
           <h3 class="text-white">No Questions Asked.</h3>
           <p class="text-white">Anonymous Information Transfer.</p>
-          <%= link_to 'Learn More', root_path, class: 'btn btn-primary btn-white' %>
-          <%= link_to 'Get Started', root_path, class: 'btn btn-primary btn-filled' %>
+          <!-- Basic membership link -->
+          <%= link_to 'Basic', '#', id: 'button3', class: 'btn btn-primary btn-white' %>
+          <!-- Get Started button -->
+          <%= link_to 'Get Started', '#', id: 'button1', class: 'btn btn-primary btn-filled' %>
+          <!-- Premium membership link -->
+          <%= link_to 'Premium', '#', id: 'button2', class: 'btn btn-primary btn-filled' %>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- <section>
-  <div class="row">
-    <div class="col-xs-4">test</div>
-    <div class="col-xs-4">test</div>
-    <div class="col-xs-4">test</div>
-  </div>
-</section>
-
-<footer>
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">test</div>
-  </div>
-</footer>
- -->
