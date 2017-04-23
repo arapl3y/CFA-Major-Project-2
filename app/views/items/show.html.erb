@@ -14,7 +14,7 @@
       <a href="<%= asset_path @item.document.url %>" class="btn btn-success" download>Download</a>
     <% else %>
       <p><%= @item.document.original_filename %></p>
-      <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-info' %>
+      <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
     <% end %>
 
     <h1><%= @item.title %></h1>
@@ -24,8 +24,8 @@
 
 
     <% if @item.user == current_user %>
-      <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure? '}, class: 'btn btn-danger' %>
+      <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-filled btn-primary btn-xs' %>
+      <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure? '}, class: 'btn btn-primary btn-xs btn-danger' %>
     <% end %>
 </div>
 

@@ -4,6 +4,12 @@
 @import "font-awesome";
 
 
+// Variables
+
+$danger-red: #d42429;
+$info-blue: #39c2dd;
+$cool-green: #00ce77;
+
 
 // General styles
 
@@ -33,8 +39,8 @@ h1 {
   &:hover {
     background: none;
     color: #fff;
-    border-color: #00ce77;
-    background-color: #00ce77;
+    border-color: $cool-green;
+    background-color: $cool-green;
   }
 }
 
@@ -58,18 +64,45 @@ h1 {
   display: inline-block;
   padding: 14px 28px 13px 28px;
   line-height: 1;
-  border: 2px solid #00ce77;
+  border: 2px solid $cool-green;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #00ce77;
+  color: $cool-green;
 }
 
 .btn-filled {
-  background: #00ce77;
+  background: $cool-green;
   color: #fff;
+  &:hover {
+    background-color: transparent;
+    border: 2px solid $cool-green;
+    color: $cool-green;
+  }
+}
+
+.btn-info {
+  background-color: $info-blue;
+  border: 2px solid $info-blue;
+  color: ghostwhite;
+  &:hover {
+    background-color: transparent;
+    border: 2px solid $info-blue;
+    color: $info-blue;
+  }
+}
+
+.btn-danger {
+  background-color: $danger-red;
+  border: 2px solid $danger-red;
+  color: ghostwhite;
+  &:hover {
+    background-color: transparent;
+    border: 2px solid $danger-red;
+    color: $danger-red;
+  }
 }
 
 // Navigation
