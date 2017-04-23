@@ -16,7 +16,6 @@ class ItemRequestsController < ApplicationController
   end
 
   def update
-
     @item_request = ItemRequest.find_by(user_id: params[:item_request][:user_id], item_id: params[:item_request][:item_id])
 
     @item_request.toggle(:approved)
