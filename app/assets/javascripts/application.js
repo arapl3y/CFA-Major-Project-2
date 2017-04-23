@@ -19,13 +19,34 @@
 
 $(document).on('turbolinks:load', function(){
   // Flash button fade out
+
   $('.alert').delay(1000).fadeOut(4000);
 
   // Home page button animations
+
   $('#button1').on('click', function() {
     $('#button2').addClass('animateToRight');
     $('#button3').addClass('animateToLeft');
     $('#button1').addClass('hide');
     return false;
+  });
+
+  // Stripe
+  var proForm = $('#pro_form');
+  var submitBtn = $('#form-submit-btn');
+  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
+
+  submitBtn.click(function(event){
+    event.preventDefault();
+    var ccNum = $('#card_number').val(),
+        cvcNum = $('#card_code').val(),
+        expMonth = $('#card_month').val(),
+        expYear = $('#card_year').val();
+    Stripe.createToken({
+      number: ccNum,
+      cvc: cvcNum,
+      exp_month: expMonth,
+      exp_year: expYear
+    }, stripeResponseHandler);
   });
 });
