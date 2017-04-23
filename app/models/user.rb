@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :item_requests
+  belongs_to :plan
 
   # requested items is an arbitrary name to find items that the user has requested more easily
   has_many :requested_items, through: :item_requests, source: :item
