@@ -244,7 +244,6 @@ nav.navbar-inverse {
   }
 }
 
-
 // Jumbotron
 
 .jumbotron {
@@ -323,6 +322,9 @@ nav.navbar-inverse {
   th {
     padding: 2em 1em !important;
     border: 0;
+  }
+  td {
+    vertical-align: middle !important;
   }
 }
 
