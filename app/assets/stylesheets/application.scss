@@ -19,6 +19,8 @@ body {
   background: #283048;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 h1 {
@@ -331,6 +333,60 @@ nav.navbar-inverse {
   margin: 0 auto;
   }
 }
+
+// Table
+
+// .wrapper {
+//   margin: 0 auto;
+//   padding: 40px;
+//   max-width: 800px;
+// }
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  display: table;
+}
+
+ // @media screen and (max-width: 580px) {
+ //    display: block;
+ // }
+
+.table-row {
+  display: table-row;
+  background: #f6f6f6;
+  &:nth-of-type(odd) {
+    background: #e9e9e9;
+  }
+  &.header {
+    font-weight: 900;
+    color: #ffffff;
+    border: 0;
+  }
+  &.green {
+    background: $cool-green;
+  }
+}
+
+
+  // @media screen and (max-width: 580px) {
+  //   padding: 8px 0;
+  //   display: block;
+  // }
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+
+}
+
+
+
+  // @media screen and (max-width: 580px) {
+  //   padding: 2px 12px;
+  //   display: block;
+  // }
 
 // Media Queries
 
