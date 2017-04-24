@@ -353,8 +353,7 @@ nav.navbar-inverse {
 
 .input-group-addon {
   text-align: center;
-  font-size: 1.2em;
-  padding: 5px;
+  font-size: 1em;
   border-left: 1px solid #ccc !important;
   border-right: 1px solid #ccc !important;
   label[for="user_Informant"],
@@ -476,7 +475,7 @@ nav.navbar-inverse {
       padding: 17px 0 17px 0;
     }
   }
-
+}
   .scale {
     transform: scale(1.2);
     box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8);
@@ -487,11 +486,6 @@ nav.navbar-inverse {
   .scale .price {
    color: $cool-green;
   }
-
-
-
-
-
 
 
 // Media Queries
@@ -537,4 +531,4 @@ nav.navbar-inverse {
     display: block;
   }
 }
-}
+
