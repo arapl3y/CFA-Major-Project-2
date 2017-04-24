@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @search = Item.search(params[:q])
-    @items = @search.result.paginate(per_page: 5, page: params[:page] )
+    @items = @search.result.paginate(per_page: 5, page: params[:page])
   end
 
   def home

@@ -30,4 +30,9 @@ $(document).on('turbolinks:load', function() {
 
     return false;
   });
+
+  $('#item_search').submit(function(){
+    $.get(this.action, $(this).serialize(), null, "script");
+    return false;
+  });
 });

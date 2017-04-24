@@ -1,41 +1,34 @@
 <div class="row profile">
   <div class="col-xs-6">
     <% if current_user.is_informant? %>
-    <%= image_tag('hacker-dog.jpg', class: 'avatar img-responsive img-circle') %>
+    <%= image_tag('hacker-dog.jpg', class: 'avatar img-responsive img-rounded') %>
     <% else %>
-    <%= image_tag('journalist-dog.jpg', class: 'avatar img-responsive') %>
+    <%= image_tag('journalist-dog.jpg', class: 'avatar img-responsive img-rounded') %>
     <% end %>
+
+    <h1><%= current_user.username %></h1>
+    <p>Render profile information here</p>
+    <%= link_to 'Edit', root_path, class: 'btn btn-primary' %>
   </div>
 
   <div class="col-xs-6">
-    <h1><%= current_user.username %></h1>
-    <h4>Bio</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus amet minima assumenda, aliquid sapiente qui impedit dignissimos ad vel nostrum quidem itaque, enim reiciendis ipsum! Praesentium dolorum, et exercitationem atque!</p>
-    <%= link_to 'Edit', root_path, class: 'btn btn-primary' %>
-  </div>
-</div>
-
-<% if current_user.is_informant? %>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <h1>New Item</h1>
+    <% if current_user.is_informant? %>
       <%= render 'form' %>
-    </div>
   </div>
+
   <div class="row">
     <div class="col-xs-12">
-      <h1>Uploaded Items</h1>
       <%= render 'partials/informant_table' %>
     </div>
   </div>
   </div>
-<% else %>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= render 'partials/journalist_table' %>
+  <% else %>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= render 'partials/journalist_table' %>
+      </div>
     </div>
-  </div>
-<% end %>
-<br>
+  <% end %>
+
 
 

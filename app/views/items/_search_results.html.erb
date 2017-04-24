@@ -1,7 +1,5 @@
-<div class="table">
-
+    <div class="table">
       <div class="table-row header green">
-
         <div class="cell">
           Item
         </div>
@@ -17,12 +15,10 @@
         <div class="cell">
           Status
         </div>
-
       </div>
 
       <% @items.each do |item| %>
       <div class="table-row">
-
         <div class="cell">
           <%= link_to item.title, item %>
         </div>
@@ -45,5 +41,6 @@
           <% end %>
         </div>
       </div>
-       <% end %>
+      <% end %>
     </div>
+
