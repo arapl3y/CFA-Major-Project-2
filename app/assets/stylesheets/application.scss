@@ -111,6 +111,19 @@ h1 {
   }
 }
 
+.btn-basic {
+  border: none;
+  border-radius: 40px;
+  background: #292b2e;
+  color: #f9f9f9;
+  padding: 10px 37px;
+  margin: 30px 90px;
+  &:hover {
+    background-color: #292b2e;
+  }
+}
+
+
 // Button animations
 .home-container a {
   position: absolute;
@@ -251,17 +264,18 @@ nav.navbar-inverse {
   // transition-property: color,background-color,box-shadow,transform;
   transition-duration: .15s;
   &:hover {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
   // box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
-  }
-  .close-btn {
-    float: right;
-    font-size: 2em;
-    color: #3e3b3e;
-    position: relative;
-    top: -35px;
-    right: -30px;
-  }
+}
+
+.close-btn {
+  float: right;
+  font-size: 2em;
+  color: #3e3b3e;
+  position: relative;
+  top: -35px;
+  right: -30px;
+}
 }
 
 // Source Board
@@ -342,8 +356,8 @@ nav.navbar-inverse {
   padding: 5px;
   label[for="user_Informant"],
   label[for="user_Journalist"] {
-  padding: 5px;
-  margin: 0 auto;
+    padding: 5px;
+    margin: 0 auto;
   }
 }
 
@@ -389,58 +403,69 @@ nav.navbar-inverse {
   display: table-cell;
   border-right: 1px solid #ABA7A7;
   &:nth-last-of-type(1) {
-      border-right: 0;
-    }
+    border-right: 0;
+  }
 }
 
 // Plans
 
 .promos {
-  width: 800px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 50px;
   .promo {
-    width: 250px;
-    background: #0F1012;
-    color: #f9f9f9;
+    width: 350px;
+    height: 400px;
+    background: ghostwhite;
+    color: #292b2e;
     float: left;
-      button {
+    margin: 10px;
+    .row {
+      margin: 0 auto;
+    }
+    .btn {
+      padding: 10px 37px;
+      margin: 30px 85px;
+    }
+    button {
       border: none;
       border-radius: 40px;
       background: #292b2e;
       color: #f9f9f9;
       padding: 10px 37px;
-      margin: 10px 0 20px 60px;
+      margin: 30px 90px;
     }
-  .deal {
-    padding: 10px 0 0 0;
-    span {
-      display: block;
-      text-align: center;
-    }
-    span:first-of-type {
-      font-size: 23px;
-    }
-    span:last-of-type {
-      font-size: 13px;
-    }
-    ul {
-      display: block;
-      margin: 20px 0 10px 0;
-      padding: 0;
-      list-style-type: none;
-      text-align: center;
-      color: #999999;
-      li {
+    .deal {
+      padding: 10px 0 0 0;
+      span {
         display: block;
-        margin: 10px 0 0 0;
+        text-align: center;
       }
-    }
+      span:first-of-type {
+        font-size: 23px;
+      }
+      span:last-of-type {
+        font-size: 13px;
+      }
+      ul {
+        font-size: 2em !important;
+        display: block;
+        margin: 20px 0 10px 0;
+        padding-left: 20px;
+        list-style-type: none;
+        text-align: center;
+        color: #999999;
+        li {
+          display: block;
+          margin: 10px 0 0 0;
+        }
+      }
 
-  }
+    }
     .price {
       display: block;
-      width: 250px;
+      color: ghostwhite;
+      width: 100%;
       background: #292b2e;
       margin: 15px 0 10px 0;
       text-align: center;
@@ -449,7 +474,7 @@ nav.navbar-inverse {
     }
   }
 
-    .scale {
+  .scale {
     transform: scale(1.2);
     box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8);
   }
@@ -457,8 +482,8 @@ nav.navbar-inverse {
     background: $cool-green;
   }
   .scale .price {
-     color: $cool-green;
-    }
+   color: $cool-green;
+  }
 
 
 
@@ -496,17 +521,17 @@ nav.navbar-inverse {
 }
 
 @media screen and (max-width: 580px) {
-    .table {
-      display: block;
-    }
-    .table-row {
-      padding: 8px 0;
-      display: block;
-    }
-
-    .cell {
-      padding: 2px 12px;
-      display: block;
-    }
+  .table {
+    display: block;
   }
+  .table-row {
+    padding: 8px 0;
+    display: block;
+  }
+
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+}
 }

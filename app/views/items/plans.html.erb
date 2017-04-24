@@ -1,41 +1,69 @@
-<div class="promos">
-  <div class="promo">
-    <div class="deal">
-      <span>Premium</span>
-      <span>This is really a good deal!</span>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="promos">
+
+        <div class="promo">
+          <div class="deal">
+            <span>Ultra-Premium</span>
+            <span>Coming soon!</span>
+          </div>
+          <span class="price">$30/month</span>
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class="features">
+                <li>Exclusive access to top stories</li>
+                <li>Instant approval on all items</li>
+                <li>And more...</li>
+              </ul>
+
+              <button class="btn" disabled>Sign up</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo scale">
+          <div class="deal">
+            <span>Premium</span>
+            <span>Get the most out of Secret Source</span>
+          </div>
+          <span class="price">$10/month</span>
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class="features">
+                <li>Request Items</li>
+                <li>Message Informants</li>
+                <li>And more...</li>
+              </ul>
+              <%= link_to 'Sign up', new_user_registration_path(plan: @premium_plan.id), class: 'btn btn-primary btn-filled' %>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="promo">
+          <div class="deal">
+            <span>Basic</span>
+            <span>Access to all basic features</span>
+          </div>
+          <span class="price">Free</span>
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class="features">
+                <li>View Item previews</li>
+                <li>And...</li>
+                <li>Not much more...</li>
+              </ul>
+              <%= link_to 'Sign up', new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-basic' %>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
     </div>
-    <span class="price">$79</span>
-    <ul class="features">
-      <li>Some great feature</li>
-      <li>Another super feature</li>
-      <li>And more...</li>
-    </ul>
-    <button>Sign up</button>
-  </div>
-  <div class="promo scale">
-    <div class="deal">
-      <span>Plus</span>
-      <span>This is really a good deal!</span>
-    </div>
-    <span class="price">$89</span>
-    <ul class="features">
-      <li>Some great feature</li>
-      <li>Another super feature</li>
-      <li>And more...</li>
-    </ul>
-    <button>Sign up</button>
-  </div>
-  <div class="promo">
-    <div class="deal">
-      <span>Basic</span>
-      <span>Basic membership</span>
-    </div>
-    <span class="price">$69</span>
-    <ul class="features">
-      <li>Choose the one on the left</li>
-      <li>We need moneyy</li>
-      <li>And more...</li>
-    </ul>
-    <button>Sign up</button>
   </div>
 </div>
+
