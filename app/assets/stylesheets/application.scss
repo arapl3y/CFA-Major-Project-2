@@ -352,8 +352,11 @@ nav.navbar-inverse {
 // Sign up and Login
 
 .input-group-addon {
-  text-align: left;
+  text-align: center;
+  font-size: 1.2em;
   padding: 5px;
+  border-left: 1px solid #ccc !important;
+  border-right: 1px solid #ccc !important;
   label[for="user_Informant"],
   label[for="user_Journalist"] {
     padding: 5px;
