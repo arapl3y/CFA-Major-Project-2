@@ -12,11 +12,11 @@
           <h3 class="text-white">No Questions Asked.</h3>
           <p class="text-white">Anonymous Information Transfer.</p>
           <!-- Basic membership link -->
-          <%= link_to 'Basic', new_user_registration_path(plan: @basic_plan.id), id: 'button3', class: 'btn btn-primary btn-white' %>
+          <%= link_to 'Informant', new_user_registration_path(plan: @basic_plan.id), id: 'button3', class: 'btn btn-primary btn-white' %>
           <!-- Get Started button -->
           <%= link_to 'Get Started', '#', id: 'button1', class: 'btn btn-primary btn-filled' %>
           <!-- Premium membership link -->
-          <%= link_to 'Premium', new_user_registration_path(plan: @premium_plan.id), id: 'button2', class: 'btn btn-primary btn-filled' %>
+          <%= link_to 'Journalist', new_user_registration_path(plan: @premium_plan.id), id: 'button2', class: 'btn btn-primary btn-filled' %>
 
         </div>
       </div>

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'items#dashboard'
 
+  get '/plans', to: 'items#plans'
+
   put '/request_item/:id', to: 'item_requests#create',
                            as: :request_item
 

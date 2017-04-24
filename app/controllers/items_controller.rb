@@ -12,6 +12,10 @@ class ItemsController < ApplicationController
     @premium_plan = Plan.find(2)
   end
 
+  def plans
+
+  end
+
   def dashboard
     @item = Item.new
     @items = current_user.items

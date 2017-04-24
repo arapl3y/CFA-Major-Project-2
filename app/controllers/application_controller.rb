@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+  def after_sign_in_path_for(resource_or_scope)
+    '/dashboard'
+  end
+
   protected
 
   def configure_permitted_parameters
