@@ -111,6 +111,10 @@ h1 {
   }
 }
 
+.btn-search {
+
+}
+
 // Button animations
 .home-container a {
   position: absolute;
@@ -267,7 +271,21 @@ nav.navbar-inverse {
 .source-board-header {
   margin-bottom: 2em;
   text-align: center;
+  .search-form {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 20px;
+
+  }
+  .search-btn {
+      padding: 7px 28px 13px 28px !important;
+      height: 42px;
+      i {
+        font-size: 2em;
+      }
+  }
 }
+
 
 // Dashboard
 
