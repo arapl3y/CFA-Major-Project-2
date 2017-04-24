@@ -24,6 +24,7 @@ gem 'stripe', '1.48.0'
 gem 'figaro', '1.1.1'
 gem 'ransack'
 gem 'will_paginate'
+gem 'paperclip-cloudinary'
 
 group :development, :test do
   gem 'byebug', platform: :mri
