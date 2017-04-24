@@ -3,62 +3,22 @@
 
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
+      <%= search_form_for @search do |f| %>
       <div class="input-group">
-        <input type="text" class="form-control search-form" placeholder="Search for...">
+
+        <%= f.text_field :title_cont, class: 'form-control search-form', placeholder: 'Search for...' %>
+
         <span class="input-group-btn">
-          <button class="btn btn-filled btn-primary search-btn" type="button"><%= icon('search') %></button>
+          <%= f.submit "Search", class: 'btn btn-filled btn-primary search-btn', id: 'sourceSearchBtn' %>
         </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
-</div>
-
-
-<% @items.each do |item| %>
-<div class="wrapper">
-  <div class="table">
-    <div class="table-row header green">
-      <div class="cell">
-        Item
       </div>
-      <div class="cell">
-        Source
-      </div>
-      <div class="cell">
-        Type
-      </div>
-      <div class="cell">
-        Uploaded on
-      </div>
-      <div class="cell">
-        Status
-      </div>
-    </div>
-
-    <div class="table-row">
-      <div class="cell">
-        <%= link_to item.title, item %>
-      </div>
-      <div class="cell">
-        <%= item.user.username %>
-      </div>
-      <div class="cell">
-        <%= item.document.content_type %>
-      </div>
-      <div class="cell">
-        <%= item.created_at.to_date %>
-      </div>
-      <div class="cell">
-        <% if item.item_requests.find_by(approved: true) %>
-          Approved
-        <% elsif item.item_requests.any? %>
-          Requested
-        <% else %>
-          Posted
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
-</div>
 
-<% end %>
+
+  <div class="wrapper search-results">
+    <%= render 'search_results' %>
+  </div>
+
+

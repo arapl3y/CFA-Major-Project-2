@@ -1,0 +1,49 @@
+<div class="table">
+
+      <div class="table-row header green">
+
+        <div class="cell">
+          Item
+        </div>
+        <div class="cell">
+          Source
+        </div>
+        <div class="cell">
+          Type
+        </div>
+        <div class="cell">
+          Uploaded on
+        </div>
+        <div class="cell">
+          Status
+        </div>
+
+      </div>
+
+      <% @items.each do |item| %>
+      <div class="table-row">
+
+        <div class="cell">
+          <%= link_to item.title, item %>
+        </div>
+        <div class="cell">
+          <%= item.user.username %>
+        </div>
+        <div class="cell">
+          <%= item.document.content_type %>
+        </div>
+        <div class="cell">
+          <%= item.created_at.to_date %>
+        </div>
+        <div class="cell">
+          <% if item.item_requests.find_by(approved: true) %>
+          Approved
+          <% elsif item.item_requests.any? %>
+          Requested
+          <% else %>
+          Posted
+          <% end %>
+        </div>
+      </div>
+       <% end %>
+    </div>

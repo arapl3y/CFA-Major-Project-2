@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    @items = Item.all.order(created_at: :desc)
+    @search = Item.search(params[:q])
+    @items = @search.result.paginate(per_page: 5, page: params[:page] )
   end
 
   def home

@@ -22,6 +22,8 @@ gem 'pundit'
 gem 'friendly_id', '~> 5.1.0'
 gem 'stripe', '1.48.0'
 gem 'figaro', '1.1.1'
+gem 'ransack'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platform: :mri

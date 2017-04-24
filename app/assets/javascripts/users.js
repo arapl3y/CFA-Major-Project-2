@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+
   var theForm = $('#proForm');
   var submitBtn = $('#form-sign-up-btn');
   //Set Stripe public key.
