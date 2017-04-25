@@ -25,6 +25,7 @@ gem 'figaro', '1.1.1'
 gem 'ransack'
 gem 'will_paginate'
 gem 'aws-sdk', '~> 2.3'
+gem 'bootstrap-will_paginate'
 
 
 group :development, :test do

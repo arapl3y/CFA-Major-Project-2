@@ -329,6 +329,18 @@ nav.navbar-inverse {
   }
 }
 
+// Pagination
+
+.pagination {
+  .active a {
+    background-color: $cool-green;
+    border-color: $cool-green;
+  }
+  li a {
+    color: $cool-green;
+  }
+}
+
 // Dashboard
 
 .dash {

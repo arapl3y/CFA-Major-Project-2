@@ -27,7 +27,7 @@ class ItemRequestsController < ApplicationController
       flash[:notice] = "Item request disapproved."
       redirect_to dashboard_path
     else
-      flash[:notice] = "Item cannot be approved at this time."
+      flash[:notice] = "Item request cannot be made at this time."
       redirect_to :back
     end
   end

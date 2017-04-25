@@ -1,5 +1,4 @@
-
-
+<!-- Rearrange form and if statements -->
 <%= form_for :item_request, url: update_item_requests_path, method: :patch do |f| %>
 <div class="table">
   <div class="table-row header green">
@@ -13,13 +12,12 @@
 
   <% if @items.count <= 0 %>
   <div class="table-row">
-    <div class="cell text-center" colspan="100%"><i>You have no items uploaded.</i></div>
+    <div class="cell text-center><i>You have no items uploaded.</i></div>
   </div>
   <% end %>
 
   <% @items.each do |item| %>
   <div class="table-row">
-
   <div class="cell text-center"><%= item.id %></div>
     <div class="cell"><%= link_to item.title, item_path(item) %></div>
 

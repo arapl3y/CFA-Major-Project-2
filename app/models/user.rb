@@ -7,8 +7,8 @@ class User < ApplicationRecord
          :rememberable, :trackable, :validatable,
          :authentication_keys => [:username]
 
-  has_many :items
-  has_many :item_requests
+  has_many :items, dependent: :destroy
+  has_many :item_requests, dependent: :destroy
   belongs_to :plan
 
   # requested items is an arbitrary name to find items that the user has requested more easily

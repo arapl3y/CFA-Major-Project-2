@@ -5,18 +5,32 @@
 
   <div class="row">
 
-    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) && @item.document.content_type == ("image/jpeg" || "image/jpg" || "image/png" || "image/svg" || "image/gif") %>
-      <%= image_tag @item.document.url, class: 'img-responsive' %>
-      <% if @item.document.content_type != "image/jpeg" %>
+    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id = current_user.id %>
+
+      <% if @item.document.content_type == ("image/jpeg" || "image/jpg" || "image/png" || "image/svg" || "image/gif")  %>
+
+        <%= image_tag @item.document.url, class: 'img-responsive' %>
+
+      <% else %>
+
         <p><%= @item.document.original_filename %></p>
+
       <% end %>
+
       <br>
+
       <a href="<%= asset_path @item.document.url %>" class="btn btn-filled btn-primary" download>Download</a>
+
     <% else %>
+
       <p><%= @item.document.original_filename %></p>
-      <% if !current_user.is_informant %>
+
+      <% if !current_user.is_informant && @item.item_requests.find_by(approved: false) %>
+
         <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
+
       <% end %>
+
     <% end %>
 
     <h1><%= @item.title %></h1>
