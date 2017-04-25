@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:notice] = "Item cannot be posted at this time."
-      render 'new'
+      redirect_to '/dashboard'
     end
   end
 
