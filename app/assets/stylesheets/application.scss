@@ -124,7 +124,7 @@ h1 {
 }
 
 
-// Button animations
+// Button animations - Home
 .home-container a {
   position: absolute;
   left: 44%;
@@ -156,9 +156,41 @@ h1 {
 
 .animateToLeft {
   -webkit-transform: translate(-100px);
-  -webkit-transform: translate(-100px);
+ transform: translate(-100px);
 }
 
+// Button animations - dashboard
+#uploadItem {
+  height: 360px;
+}
+
+.upload-form #uploadBrowseBtn,
+.upload-form #uploadSubmitBtn {
+  position: absolute;
+  left: 8%;
+  top: 72%;
+  display: inline-block;
+}
+
+#uploadSubmitBtn {
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+
+#uploadBrowseBtn {
+  z-index: 10;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  &:hover {
+    background: $cool-green;
+    color: ghostwhite;
+  }
+}
+
+.animateToBottom {
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+}
 // Navigation
 
 nav.navbar-inverse {
@@ -317,6 +349,10 @@ nav.navbar-inverse {
     color: black;
     margin-bottom: 1em;
   }
+}
+
+#uploadItem {
+  margin-bottom: 2em;
 }
 
 // Flash messages

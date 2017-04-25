@@ -5,7 +5,7 @@
     <h1 class="text-center">Welcome, <%= current_user.username %></h1>
   <% end %>
 
-  <div class="col-xs-6 col-xs-offset-3">
+  <div class="col-xs-6 col-xs-offset-3 upload-form">
     <% if current_user.is_informant? %>
       <%= render 'form' %>
   </div>

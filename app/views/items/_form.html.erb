@@ -1,5 +1,5 @@
 
-<%= form_for @item, html: { multipart: true } do |f| %>
+<%= form_for @item, html: { multipart: true, id: 'uploadItem' } do |f| %>
 <h1>Upload Item</h1>
 
     <%= f.label :title, class: 'control-label' %>:
@@ -8,8 +8,12 @@
     <%= f.label :description, class: 'control-label' %>:
     <%= f.text_field :description, class: 'form-control' %><br />
 
-    <%= f.label :document, class: 'control-label' %>:
-    <%= f.file_field :document, class: 'form-control' %><br />
-  <%= f.submit "Submit", class: 'btn btn-default btn-primary' %>
+    <%= f.label :document, 'Browse', id: 'uploadBrowseBtn', class: 'btn btn-filled btn-primary btn-xs' %>
+    <%= f.file_field :document, style: 'display: none;', onchange: "$('#uploadFileInfo').html($(this).val());" %>
+    <span id="uploadFileInfo"></span>
+
+    <br>
+    <br>
+    <%= f.submit "Submit", id: 'uploadSubmitBtn', class: 'btn btn-filled btn-primary btn-xs' %>
 
 <% end %>

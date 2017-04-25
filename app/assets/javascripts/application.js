@@ -31,6 +31,15 @@ $(document).on('turbolinks:load', function() {
     return false;
   });
 
+  // Dashboard upload button animations
+  $('#item_document').on('change', function() {
+    $('#uploadSubmitBtn').addClass('animateToBottom');
+    $('#uploadBrowseBtn').addClass('hide');
+
+    return false;
+  })
+
+  // AJAX for search
   $('#item_search').submit(function(){
     $.get(this.action, $(this).serialize(), null, "script");
     return false;
