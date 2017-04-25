@@ -166,7 +166,7 @@ h1 {
 .upload-form #uploadSubmitBtn {
   position: absolute;
   left: 8%;
-  top: 75%;
+  top: 70%;
   display: inline-block;
 }
 
@@ -334,17 +334,15 @@ nav.navbar-inverse {
   height: 500px;
   width: 100%;
   border-radius: 10px;
-  h1 {
-    margin-bottom: 1.6em;
-  }
 }
 
 .new_item {
-  height: 400px;
+  height: 350px;
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 2em;
   h1 {
+    font-size: 1.6em;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     padding: 1em .5em;
@@ -432,6 +430,7 @@ nav.navbar-inverse {
   border-right: 1px solid #ABA7A7;
   &:nth-last-of-type(1) {
     border-right: 0;
+    width: 80px;
   }
 }
 
