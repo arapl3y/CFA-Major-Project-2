@@ -660,9 +660,27 @@ nav.navbar-inverse {
     padding: 1.2em;
     .item {
       padding: 1.2em;
+      a {
+          i {
+          color: $storm-grey;
+        }
+      }
       .send-message {
         margin-left: 1em;
       }
+      .btn-filled {
+        margin: 1em;
+        transition: .3s;
+        &:hover {
+          a {
+          color: $cool-green !important;
+          }
+        }
+        a {
+        color: ghostwhite !important;
+        text-decoration: none;
+      }
+    }
     }
   }
 }

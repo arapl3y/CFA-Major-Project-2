@@ -13,11 +13,14 @@
                 <% else %>
                   <% recipient = User.find(conversation.sender_id) %>
                 <% end %>
-                <%= link_to recipient.username, conversation_messages_path(conversation) %>
+                <div class="btn-filled btn-primary btn-xs">
+                  <%= link_to recipient.username, conversation_messages_path(conversation) %>
+                  <%= icon('envelope') %>
+                </div>
               <% end %>
               <% end %>
-           </div>
-        </div>
+            </div>
+          </div>
 
       <h3>All Users</h3>
 
@@ -25,7 +28,7 @@
           <% @users.each do |user| %>
             <% if user.id != current_user.id %>
               <div class="item">
-                <%= user.username %> <%= link_to 'Send message',
+                <%= user.username %> <%= link_to icon('paper-plane'),
                 conversations_path(sender_id: current_user.id,
                 recipient_id: user.id), method: 'post', class: 'send-message' %>
               </div>
