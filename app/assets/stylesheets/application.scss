@@ -9,6 +9,7 @@
 $danger-red: #d42429;
 $info-blue: #39c2dd;
 $cool-green: #00ce77;
+$storm-grey: #3e3b3e;;
 
 
 // General styles
@@ -160,15 +161,12 @@ h1 {
 }
 
 // Button animations - dashboard
-#uploadItem {
-  height: 360px;
-}
 
 .upload-form #uploadBrowseBtn,
 .upload-form #uploadSubmitBtn {
   position: absolute;
   left: 8%;
-  top: 72%;
+  top: 75%;
   display: inline-block;
 }
 
@@ -342,18 +340,31 @@ nav.navbar-inverse {
 }
 
 .new_item {
+  height: 400px;
   background-color: #fff;
-  padding: 1em 2em;
   border-radius: 10px;
+  margin-bottom: 2em;
   h1 {
-    color: black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 1em .5em;
+    color: #fff;
     margin-bottom: 1em;
+    background-color: $cool-green;
+  }
+  .control-label {
+    margin-left: 80px !important;
+  }
+  .form-control {
+    width: 70%;
+    margin: 0 auto;
+  }
+  #uploadFileInfo {
+    margin-left: 80px;
+    font-size: 1.1em;
   }
 }
 
-#uploadItem {
-  margin-bottom: 2em;
-}
 
 // Flash messages
 
