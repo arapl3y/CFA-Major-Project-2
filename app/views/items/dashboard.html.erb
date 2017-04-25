@@ -1,8 +1,8 @@
 <div class="row profile">
   <% if current_user.is_informant %>
-    <h1 class="text-center">Informant Dashboard</h1>
+    <h1 class="text-center">Welcome, <%= current_user.username %></h1>
   <% else %>
-    <h1 class="text-center">Journalist Dashboard</h1>
+    <h1 class="text-center">Welcome, <%= current_user.username %></h1>
   <% end %>
 
   <div class="col-xs-6 col-xs-offset-3">

@@ -4,6 +4,7 @@
     <div class="cell text-center">#</div>
     <div class="cell">Requested</div>
     <div class="cell">Status</div>
+    <div class="cell">Request date</div>
   </div>
 
 
@@ -11,15 +12,37 @@
   <% current_user.requested_items.each do |item| %>
     <div class="table-row">
       <% if item.item_requests.any? %>
-      <div class="cell text-center"><%= item.id %></div>
-      <div class="cell"><%= link_to item.title, item_path(item) %></div>
-      <% if item.item_requests.find_by(approved: true) %>
-      <div class="cell">Approved</div>
-      <% else %>
-      <div class="cell">Requested</div>
-      <% end %>
+        <div class="cell text-center"><%= item.id %></div>
+        <div class="cell"><%= link_to item.title, item_path(item) %></div>
+        <% if item.item_requests.find_by(approved: true) %>
+        <div class="cell">Approved</div>
+        <% else %>
+        <div class="cell">Requested</div>
+        <% end %>
+        <div class="cell"><%= item.created_at.to_date %></div>
       <% end %>
     </div>
   <% end %>
 </div>
 
+
+<div class="table">
+  <div class="table-row header green">
+    <div class="cell">Total Requests</div>
+    <div class="cell">Total Approvals</div>
+  </div>
+
+  <div class="table-row">
+  <% requests = [] %>
+  <% approvals = [] %>
+  <% current_user.requested_items.each do |item| %>
+    <% requests << item %>
+    <% if item.item_requests.find_by(approved: true) %>
+      <% approvals << item %>
+    <% end %>
+  <% end %>
+     <div class="cell"><%= requests.count %></div>
+    <div class="cell"><%= approvals.count %></div>
+  </div>
+
+</div>
