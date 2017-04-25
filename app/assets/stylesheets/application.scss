@@ -637,6 +637,68 @@ nav.navbar-inverse {
    color: $cool-green !important;
   }
 
+// Mailbox
+
+.mailbox {
+  width: 60%;
+  font-size: 1.1em;
+  h3 {
+    font-size: 1.4em;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 1em .5em;
+    color: #fff;
+    margin-bottom: 1em;
+    background-color: $cool-green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   &:last-of-type {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+   }
+  }
+  .list {
+    padding: 1.2em;
+    .item {
+      padding: 1.2em;
+      .send-message {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.conversation {
+  h3 {
+    font-size: 1.4em;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 1em .5em;
+    color: #fff;
+    margin-bottom: 1em;
+    background-color: $cool-green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .header {
+    strong {
+      margin-right: 2em;
+      font-size: 1.1em;
+    }
+  }
+  .content {
+    margin: 2em;
+  }
+  .list {
+    padding: 1.2em;
+    border-bottom: 1px solid #CBCFCC;
+    .item {
+
+    }
+  }
+  .form-control {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 
 // Media Queries
 
@@ -681,4 +743,6 @@ nav.navbar-inverse {
     display: block;
   }
 }
+
+
 
