@@ -290,28 +290,49 @@ nav.navbar-inverse {
 // Jumbotron
 
 .jumbotron {
-  padding: 40px 40px 40px 120px;
-  border-radius: 4px;
-  // box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-  // transition-property: color,background-color,box-shadow,transform;
-  transition-duration: .15s;
-  &:hover {
-    transform: translateY(-4px);
-  // box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+  padding: 0 !important;
+  width: 800px;
+  margin: 0 auto;
+  border-top-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  h1 {
+    font-size: 3em;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    color: ghostwhite;
+    background-color: $cool-green;
+    margin-bottom: 0.8em;
+    padding: .5em;
+    width: 100%;
+    margin: 0;
   }
   .close-btn {
     float: right;
     font-size: 2em;
-    color: #3e3b3e;
+    color: ghostwhite;
     position: relative;
-    top: -35px;
-    right: -30px;
+    top: -90px;
+    right: 10px;
   }
   .item-description {
+    background-color: #ccc;
+    padding: 1em .5em;
+    margin: 1.6em;
+    border-radius: 10px;
     word-wrap: break-word;
+    width: 700px;
+    height: 300px;
+    overflow-y: scroll;
   }
-  h1 {
-    margin-bottom: 1em;
+  .item-meta {
+    margin-top: 0.8em;
+  }
+  .btn {
+    margin: 2em 2em;
+  }
+  p {
+    padding: 1.6em;
   }
 }
 

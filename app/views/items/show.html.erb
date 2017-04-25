@@ -1,19 +1,24 @@
 <div class="jumbotron">
+
+
+
   <div class="row">
-    <%= link_to icon('times'), items_path, class: 'close-btn' %>
+    <div class="col-xs-12">
+      <h1><%= @item.title %></h1>
+      <%= link_to icon('times'), items_path, class: 'close-btn' %>
+    </div>
   </div>
-
   <div class="row">
-
-    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
+    <div class="col-xs-12">
+      <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
 
       <% if @item.document.content_type == ("image/jpeg" || "image/jpg" || "image/png" || "image/svg" || "image/gif")  %>
 
-        <%= image_tag @item.document.url, class: 'img-responsive' %>
+      <%= image_tag @item.document.url, class: 'img-responsive' %>
 
       <% else %>
 
-        <p><%= @item.document.original_filename %></p>
+      <p><%= @item.document.original_filename %></p>
 
       <% end %>
 
@@ -21,32 +26,39 @@
 
       <a href="<%= asset_path @item.document.url %>" class="btn btn-filled btn-primary" download>Download</a>
 
-    <% else %>
+      <% else %>
 
       <p><%= @item.document.original_filename %></p>
 
-  <!-- Must negate the whole answer, as opposed to approved: false, as it may not exist, !approved is invalid for the query -->
+      <!-- Must negate the whole answer, as opposed to approved: false, as it may not exist, !approved is invalid for the query -->
       <% if !current_user.is_informant && !@item.item_requests.find_by(approved: true) %>
 
-        <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
+      <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
 
       <% end %>
 
-    <% end %>
+      <% end %>
+    </div>
+  </div>
 
-    <h1><u>Title:</u> <%= @item.title %></h1>
-    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
-      <p class="item-description"><u>Description:</u> <i><%= @item.description %></i></p>
-    <% else %>
-      <p class="item-description"><u>Description:</u> <i><%= @item.description + "..." + dummy_encryption %></i></p>
-    <% end %>
-    <p>Uploaded by: <b><%= @item.user.username %></b></p>
-    <p>Uploaded at: <%= @item.created_at.to_date %></p>
+  <div class="row">
+    <div class="col-xs-12">
 
+      <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
 
-    <% if @item.user == current_user %>
+      <p class="item-description">Description: <i><%= @item.description %></i></p>
+      <% else %>
+      <p class="item-description">Description: <i><%= @item.description + "..." + dummy_encryption %></i></p>
+      <% end %>
+
+      <p class="item-meta">Uploaded by: <b><%= @item.user.username %></b> on <%= @item.created_at.to_date %></p>
+
+      <% if @item.user == current_user %>
       <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-filled btn-primary btn-xs' %>
       <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure? '}, class: 'btn btn-primary btn-xs btn-danger' %>
-    <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 </div>
 
