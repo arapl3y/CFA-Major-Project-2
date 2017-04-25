@@ -8,3 +8,11 @@
 
 Plan.create(name: 'basic', price: 0)
 Plan.create(name: 'premium', price: 10)
+
+
+User.create!(username: 'Alex', password: 'asdfasdf', is_informant: false, plan_id: 2)
+User.create!(username: 'CFA_Mole', password: 'asdfasdf', is_informant: true, plan_id: 1)
+User.create!(username: 'GGreenwald', password: 'asdfasdf', is_informant: false, plan_id: 2)
+User.create!(username: 'Sn0wd3n', password: 'asdfasdf', is_informant: true, plan_id: 2)
+User.create!(username: 'JStewart', password: 'asdfasdf', is_informant: false, plan_id: 1)
+
