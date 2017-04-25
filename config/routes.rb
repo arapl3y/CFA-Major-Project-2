@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   resources :items
 
+  resources :conversations do
+    resources :messages
+  end
+
 
   post 'item_requests', to: 'item_requests#create'
   patch 'update_item_requests', to: 'item_requests#update'
