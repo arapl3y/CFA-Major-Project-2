@@ -428,9 +428,11 @@ nav.navbar-inverse {
   padding: 18px;
   display: table-cell;
   border-right: 1px solid #ABA7A7;
+  &.approval-cell {
+    width: 80px
+  }
   &:nth-last-of-type(1) {
     border-right: 0;
-    width: 80px;
   }
 }
 
