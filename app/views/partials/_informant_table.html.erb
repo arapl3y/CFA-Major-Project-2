@@ -25,38 +25,37 @@
 
 
     <% if item.item_requests.any? %>
-    <% if item.item_requests.find_by(approved: true) %>
-    <div class="cell">Approved</div>
-    <% else %>
-    <div class="cell">Requested</div>
-    <% end %>
-
-
-
-    <div class="cell">
-
-      <!-- Find if any item_requests have been approved -->
-      <% if item.item_requests.any? { |r| r.approved } %>
-      <!-- If there are, find that record and only show that one so that you can't approve multiple -->
-      <%= item.item_requests.where(approved: true).first.user.username %>
-      <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
+      <% if item.item_requests.find_by(approved: true) %>
+        <div class="cell">Approved</div>
       <% else %>
-      <!-- If none are approved, choose which you would like to approve -->
-      <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+        <div class="cell">Requested</div>
       <% end %>
-      <%= f.hidden_field :item_id, value: item.id %>
-    </div>
 
-    <div class="cell">
-      <% if item.item_requests.any? { |r| r.approved } %>
-      <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
-      <% else %>
-      <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
-      <% end %>
-    </div>
+      <div class="cell">
+        <!-- Find if any item_requests have been approved -->
+        <% if item.item_requests.any? { |r| r.approved } %>
+          <!-- If there are, find that record and only show that one so that you can't approve multiple -->
+          <%= item.item_requests.where(approved: true).first.user.username %>
+          <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
+        <% else %>
+          <!-- If none are approved, choose which you would like to approve -->
+          <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+        <% end %>
+          <%= f.hidden_field :item_id, value: item.id %>
+      </div>
+
+      <div class="cell">
+        <% if item.item_requests.any? { |r| r.approved } %>
+          <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
+        <% else %>
+          <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
+        <% end %>
+      </div>
 
     <% else %>
-    <div class="cell">Posted</div>
+      <div class="cell">Posted</div>
+      <div class="cell"></div>
+      <div class="cell"></div>
     <% end %> <!-- end if statement -->
   </div>
   <% end %> <!-- end loop -->
