@@ -16,6 +16,8 @@
         <div class="cell"><%= link_to item.title, item_path(item) %></div>
         <% if item.item_requests.find_by(user_id: current_user.id, approved: true) %>
         <div class="cell">Approved</div>
+        <% elsif !item.item_requests.find_by(approved: true) %>
+        <div class="cell">Requested</div>
         <% else %>
         <div class="cell">Ignored</div>
         <% end %>
