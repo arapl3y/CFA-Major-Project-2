@@ -20,7 +20,7 @@
 $(document).on('turbolinks:load', function() {
 
   // Flash button fade out
-  $('.alert').delay(1000).fadeOut(4000);
+  $('.alert').delay(1000).fadeOut(5000);
 
   // Home page button animations
   $('#button1').on('click', function() {

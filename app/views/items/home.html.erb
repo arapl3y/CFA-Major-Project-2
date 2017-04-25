@@ -9,12 +9,12 @@
 
           <%= image_tag('flask-icon-min.png', class: 'flask-logo img-responsive') %>
           <h1>Secret Source</h1>
-          <h3 class="text-white">No Questions Asked.</h3>
+          <h3 class="text-white">Get Informed.</h3>
           <p class="text-white">Anonymous Information Transfer.</p>
           <!-- Basic membership link -->
           <%= link_to 'Informant', new_user_registration_path(plan: @basic_plan.id), id: 'button3', class: 'btn btn-primary btn-white' %>
           <!-- Get Started button -->
-          <%= link_to 'Get Started', '#', id: 'button1', class: 'btn btn-primary btn-filled' %>
+          <%= link_to 'Get Started', '#', id: 'button1', class: 'btn btn-primary btn-filled get-started' %>
           <!-- Premium membership link -->
           <%= link_to 'Journalist', plans_path, id: 'button2', class: 'btn btn-primary btn-filled' %>
 

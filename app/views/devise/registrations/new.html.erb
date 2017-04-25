@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
-      <div class="well">
+
 
         <% if params[:plan] == "2" %>
-          <%= render 'partials/pro_form' %>
+          <div class="well premium-signup-form">
+            <%= render 'partials/pro_form' %>
+          </div>
         <% else %>
-          <%= render 'partials/basic_form' %>
+          <div class="well basic-signup-form">
+            <%= render 'partials/basic_form' %>
+          </div>
         <% end %>
 
-      </div>
+
       <div class="well text-center">
       Already have an account? <%= render 'devise/shared/links' %>
       </div>

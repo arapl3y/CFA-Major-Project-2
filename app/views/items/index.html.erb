@@ -1,12 +1,10 @@
 <div class="source-board-header">
-  <h1>Source Board</h1>
-
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
       <%= search_form_for @search, id: 'item_search' do |f| %>
       <div class="input-group">
 
-        <%= f.text_field :title_cont, class: 'form-control search-form', placeholder: 'Search for...' %>
+        <%= f.text_field :title_cont, class: 'form-control search-form', placeholder: 'Search for an item...' %>
 
         <span class="input-group-btn">
           <%= f.submit "Search", class: 'btn btn-filled btn-primary search-btn', id: 'sourceSearchBtn' %>

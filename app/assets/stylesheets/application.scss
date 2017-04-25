@@ -12,6 +12,7 @@ $cool-green: #00ce77;
 $storm-grey: #3e3b3e;;
 
 
+
 // General styles
 
 body {
@@ -43,17 +44,25 @@ h1 {
   -moz-transition: all .3s ease;
   transition: all .3s ease;
   min-width: 155px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:hover {
     background: none;
     color: #fff;
     border-color: $cool-green;
     background-color: $cool-green;
   }
+  &:focus {
+    background-color: transparent;
+  }
+  &:active {
+    background-color: transparent;
+  }
 }
 
 .btn-white {
   border-color: #fff !important;
   color: #fff !important;
+
   &:hover {
     background: #fff;
     color: #333333 !important;
@@ -122,6 +131,10 @@ h1 {
   &:hover {
     background-color: #292b2e;
   }
+}
+
+.get-started {
+  box-shadow: none !important;
 }
 
 
@@ -287,15 +300,70 @@ nav.navbar-inverse {
   }
 }
 
+// Well
+
+.well:first-of-type {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0 !important;
+  border: 0;
+  height: 700px;
+  h2 {
+    margin: 0;
+    font-size: 1.6em;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 1em .5em;
+    color: #fff;
+    margin-bottom: 1.8em;
+    background-color: $cool-green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .form-group {
+    width: 80% !important;
+    margin: 0 auto;
+    padding: .5em .5em;
+  }
+  &:last-of-type {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  }
+  &.login-form {
+    height: 400px;
+    .btn {
+      margin: 2.2em 3em;
+    }
+  }
+}
+
+.well.premium-signup-form {
+  height: 700px;
+  .btn {
+    margin-top: 2em !important;
+    margin-right: 2em !important;
+  }
+}
+
+.well.basic-signup-form {
+    height: 500px !important;
+    .btn {
+      margin-top: 2em;
+      margin-right: 2em;
+    }
+  }
+
+
 // Jumbotron
 
 .jumbotron {
   padding: 0 !important;
   width: 800px;
   margin: 0 auto;
+  margin-bottom: 2em;
   border-top-right-radius: 10px !important;
   border-top-left-radius: 10px !important;
-  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   h1 {
     font-size: 3em;
     border-top-right-radius: 10px !important;
@@ -306,6 +374,7 @@ nav.navbar-inverse {
     padding: .5em;
     width: 100%;
     margin: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .close-btn {
     float: right;
@@ -324,6 +393,7 @@ nav.navbar-inverse {
     width: 700px;
     height: 300px;
     overflow-y: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .item-meta {
     margin-top: 0.8em;
@@ -339,12 +409,13 @@ nav.navbar-inverse {
 // Source Board
 
 .source-board-header {
-  margin-bottom: 2em;
+  margin: 2em;
   text-align: center;
   .search-form {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .search-btn {
     padding: 10px 32px 13px 28px !important;
@@ -381,6 +452,7 @@ nav.navbar-inverse {
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   h1 {
     font-size: 1.6em;
     border-top-right-radius: 10px;
@@ -389,6 +461,7 @@ nav.navbar-inverse {
     color: #fff;
     margin-bottom: 1em;
     background-color: $cool-green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .control-label {
     margin-left: 80px !important;
@@ -410,21 +483,27 @@ nav.navbar-inverse {
 .alert {
   width: 50%;
   margin: 0 auto;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 // Sign up and Login
 
 .input-group-addon {
   text-align: center;
-  font-size: 1em;
+  font-size: 1.2em;
   border-left: 1px solid #ccc !important;
   border-right: 1px solid #ccc !important;
+  padding: .5em;
   label[for="user_Informant"],
-  label[for="user_Journalist"] {
-    padding: 5px;
-    margin: 0 auto;
+  #user_is_informant_true {
+    margin-right: 1em;
+  }
+
+  label[for="user_Journalist"],
+  #user_is_informant_false {
+    margin-left: 1em;
   }
 }
 
@@ -441,11 +520,13 @@ nav.navbar-inverse {
   width: 100%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   display: table;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .table-row {
   display: table-row;
   background: #f6f6f6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:nth-of-type(odd) {
     background: #e9e9e9;
   }
@@ -490,6 +571,7 @@ nav.navbar-inverse {
     color: #292b2e;
     float: left;
     margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .row {
       margin: 0 auto;
     }

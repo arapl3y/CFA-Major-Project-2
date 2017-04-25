@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Secret Source</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Secret Source</title>
+  <%= csrf_meta_tags %>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'https://js.stripe.com/v2/', type: 'text/javascript' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
-  </head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'https://js.stripe.com/v2/', type: 'text/javascript' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
+</head>
 
-  <body>
-    <%= render 'partials/nav' %>
+<body>
+  <%= render 'partials/nav' %>
+  <div class="container">
 
-    <div class="container">
 
       <%= render "partials/flash_messages", flash: flash %>
 
 
-      <%= yield %>
-
-    </div>
-
-  </body>
+    <%= yield %>
+  </div>
+</body>
 </html>
