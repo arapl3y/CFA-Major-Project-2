@@ -11,7 +11,7 @@
         <p><%= @item.document.original_filename %></p>
       <% end %>
       <br>
-      <a href="<%= asset_path @item.document.url %>" class="btn btn-success" download>Download</a>
+      <a href="<%= asset_path @item.document.url %>" class="btn btn-filled btn-primary" download>Download</a>
     <% else %>
       <p><%= @item.document.original_filename %></p>
       <% if !current_user.is_informant %>
