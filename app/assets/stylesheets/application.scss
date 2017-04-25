@@ -298,16 +298,21 @@ nav.navbar-inverse {
   &:hover {
     transform: translateY(-4px);
   // box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
-}
-
-.close-btn {
-  float: right;
-  font-size: 2em;
-  color: #3e3b3e;
-  position: relative;
-  top: -35px;
-  right: -30px;
-}
+  }
+  .close-btn {
+    float: right;
+    font-size: 2em;
+    color: #3e3b3e;
+    position: relative;
+    top: -35px;
+    right: -30px;
+  }
+  .item-description {
+    word-wrap: break-word;
+  }
+  h1 {
+    margin-bottom: 1em;
+  }
 }
 
 // Source Board

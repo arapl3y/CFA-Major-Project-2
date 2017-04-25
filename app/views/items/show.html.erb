@@ -7,8 +7,6 @@
 
     <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
 
-
-
       <% if @item.document.content_type == ("image/jpeg" || "image/jpg" || "image/png" || "image/svg" || "image/gif")  %>
 
         <%= image_tag @item.document.url, class: 'img-responsive' %>
@@ -36,10 +34,14 @@
 
     <% end %>
 
-    <h2><%= @item.title %></h2>
-    <p><%= @item.description %></p>
+    <h1><u>Title:</u> <%= @item.title %></h1>
+    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
+      <p class="item-description"><u>Description:</u> <i><%= @item.description %></i></p>
+    <% else %>
+      <p class="item-description"><u>Description:</u> <i><%= @item.description + "..." + dummy_encryption %></i></p>
+    <% end %>
     <p>Uploaded by: <b><%= @item.user.username %></b></p>
-    <p><%= @item.created_at.to_date %></p>
+    <p>Uploaded at: <%= @item.created_at.to_date %></p>
 
 
     <% if @item.user == current_user %>
