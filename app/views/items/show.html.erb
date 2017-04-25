@@ -5,7 +5,7 @@
 
   <div class="row">
 
-    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) && @item.document.content_type == ("image/jpeg" || "image/png" || "image/svg" || "image/gif") %>
+    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) && @item.document.content_type == ("image/jpeg" || "image/jpg" || "image/png" || "image/svg" || "image/gif") %>
       <%= image_tag @item.document.url, class: 'img-responsive' %>
       <% if @item.document.content_type != "image/jpeg" %>
         <p><%= @item.document.original_filename %></p>

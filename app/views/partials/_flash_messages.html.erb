@@ -1,5 +1,9 @@
-<% flash.each do |type, message| %>
-  <div class="alert <%= bootstrap_class_for(type) %>">
-    <%= message %>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% flash.each do |type, message| %>
+      <div class="alert <%= bootstrap_class_for(type) %>">
+        <%= message %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
