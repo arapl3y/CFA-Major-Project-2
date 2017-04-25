@@ -5,7 +5,9 @@
 
   <div class="row">
 
-    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id = current_user.id %>
+    <% if @item.item_requests.find_by(user_id: current_user.id, approved: true) || @item.user_id == current_user.id %>
+
+
 
       <% if @item.document.content_type == ("image/jpeg" || "image/jpg" || "image/png" || "image/svg" || "image/gif")  %>
 
@@ -25,7 +27,8 @@
 
       <p><%= @item.document.original_filename %></p>
 
-      <% if !current_user.is_informant && @item.item_requests.find_by(approved: false) %>
+  <!-- Must negate the whole answer, as opposed to approved: false, as it may not exist, !approved is invalid for the query -->
+      <% if !current_user.is_informant && !@item.item_requests.find_by(approved: true) %>
 
         <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
 
@@ -33,7 +36,7 @@
 
     <% end %>
 
-    <h1><%= @item.title %></h1>
+    <h2><%= @item.title %></h2>
     <p><%= @item.description %></p>
     <p>Uploaded by: <b><%= @item.user.username %></b></p>
     <p><%= @item.created_at.to_date %></p>

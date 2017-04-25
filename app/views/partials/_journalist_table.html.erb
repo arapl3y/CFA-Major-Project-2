@@ -14,10 +14,10 @@
       <% if item.item_requests.any? %>
         <div class="cell text-center"><%= item.id %></div>
         <div class="cell"><%= link_to item.title, item_path(item) %></div>
-        <% if item.item_requests.find_by(approved: true) %>
+        <% if item.item_requests.find_by(user_id: current_user.id, approved: true) %>
         <div class="cell">Approved</div>
         <% else %>
-        <div class="cell">Requested</div>
+        <div class="cell">Ignored</div>
         <% end %>
         <div class="cell"><%= item.created_at.to_date %></div>
       <% end %>
