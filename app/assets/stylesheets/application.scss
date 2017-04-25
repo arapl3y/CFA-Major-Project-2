@@ -163,7 +163,9 @@ h1 {
 // Button animations - dashboard
 
 .upload-form #uploadBrowseBtn,
-.upload-form #uploadSubmitBtn {
+.upload-form #uploadSubmitBtn,
+.edit-form #uploadBrowseBtn,
+.edit-form #uploadSubmitBtn {
   position: absolute;
   left: 8%;
   top: 70%;
@@ -327,16 +329,16 @@ nav.navbar-inverse {
   }
 }
 
-
 // Dashboard
 
-.profile {
+.dash {
   height: 500px;
   width: 100%;
   border-radius: 10px;
 }
 
-.new_item {
+.new_item,
+.edit_item {
   height: 350px;
   background-color: #fff;
   border-radius: 10px;
@@ -358,8 +360,9 @@ nav.navbar-inverse {
     margin: 0 auto;
   }
   #uploadFileInfo {
-    margin-left: 80px;
+    padding: 40px;
     font-size: 1.1em;
+    word-wrap: break-word;
   }
 }
 

@@ -44,7 +44,7 @@
           <%= f.hidden_field :item_id, value: item.id %>
       </div>
 
-      <div class="cell">
+      <div class="cell approval-cell">
         <% if item.item_requests.any? { |r| r.approved } %>
           <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
         <% else %>
