@@ -1,28 +1,25 @@
-<div class="padded-table">
-<table class="table table-borderless">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Requested</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
 
-    <% current_user.requested_items.each do |item| %>
-      <tr>
+<div class="table">
+  <div class="table-row header green">
+    <div class="cell text-center">#</div>
+    <div class="cell">Requested</div>
+    <div class="cell">Status</div>
+  </div>
+
+
+
+  <% current_user.requested_items.each do |item| %>
+    <div class="table-row">
       <% if item.item_requests.any? %>
-        <th scope="row"><%= item.id %></th>
-        <td><%= link_to item.title, item_path(item) %></td>
-        <% if item.item_requests.find_by(approved: true) %>
-          <td>Approved</td>
-        <% else %>
-          <td>Requested</td>
-        <% end %>
+      <div class="cell text-center"><%= item.id %></div>
+      <div class="cell"><%= link_to item.title, item_path(item) %></div>
+      <% if item.item_requests.find_by(approved: true) %>
+      <div class="cell">Approved</div>
+      <% else %>
+      <div class="cell">Requested</div>
       <% end %>
-      </tr>
-      <tr>
-    <% end %>
-   </tbody>
- </table>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
