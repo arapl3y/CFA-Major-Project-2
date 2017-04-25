@@ -4,6 +4,7 @@ class ConversationsController < ApplicationController
   def index
     @users = User.all
     @conversations = Conversation.all
+    authorize @conversations
   end
 
   def create
