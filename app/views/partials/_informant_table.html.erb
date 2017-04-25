@@ -1,69 +1,67 @@
 
-<div class="padded-table">
+
 <%= form_for :item_request, url: update_item_requests_path, method: :patch do |f| %>
-  <table class="table table-borderless">
-
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Uploaded</th>
-        <th>Status</th>
-        <th>Requesters</th>
-        <th>Approve</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if @items.count <= 0 %>
-        <tr><td colspan="100%" class="text-center"><i>You have no items uploaded.</i></td></tr>
-      <% end %>
-
-      <% @items.each do |item| %>
-      <tr>
-
-        <th scope="row"><%= item.id %></th>
-        <td><%= link_to item.title, item_path(item) %></td>
+<div class="table">
+  <div class="table-row header green">
+    <div class="cell text-center">#</div>
+    <div class="cell">Uploaded</div>
+    <div class="cell">Status</div>
+    <div class="cell">Requesters</div>
+    <div class="cell">Approve</div>
+  </div>
 
 
-        <% if item.item_requests.any? %>
-          <% if item.item_requests.find_by(approved: true) %>
-            <td>Approved</td>
-          <% else %>
-            <td>Requested</td>
-          <% end %>
+  <% if @items.count <= 0 %>
+  <div class="table-row">
+    <div class="cell text-center" colspan="100%"><i>You have no items uploaded.</i></div>
+  </div>
+  <% end %>
+
+  <% @items.each do |item| %>
+  <div class="table-row">
+
+  <div class="cell text-center"><%= item.id %></div>
+    <div class="cell"><%= link_to item.title, item_path(item) %></div>
+
+
+    <% if item.item_requests.any? %>
+    <% if item.item_requests.find_by(approved: true) %>
+    <div class="cell">Approved</div>
+    <% else %>
+    <div class="cell">Requested</div>
+    <% end %>
 
 
 
-          <td>
+    <div class="cell">
 
-            <!-- Find if any item_requests have been approved -->
-            <% if item.item_requests.any? { |r| r.approved } %>
-              <!-- If there are, find that record and only show that one so that you can't approve multiple -->
-              <%= item.item_requests.where(approved: true).first.user.username %>
-              <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
-            <% else %>
-              <!-- If none are approved, choose which you would like to approve -->
-              <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
-            <% end %>
-            <%= f.hidden_field :item_id, value: item.id %>
-          </td>
-
-          <td>
-            <% if item.item_requests.any? { |r| r.approved } %>
-              <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
-            <% else %>
-              <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
-            <% end %>
-          </td>
-
+      <!-- Find if any item_requests have been approved -->
+      <% if item.item_requests.any? { |r| r.approved } %>
+      <!-- If there are, find that record and only show that one so that you can't approve multiple -->
+      <%= item.item_requests.where(approved: true).first.user.username %>
+      <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
       <% else %>
-      <td>Posted</td>
-      <% end %> <!-- end if statement -->
-    </tr>
-    <% end %> <!-- end loop -->
-  </tbody>
-</table>
+      <!-- If none are approved, choose which you would like to approve -->
+      <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+      <% end %>
+      <%= f.hidden_field :item_id, value: item.id %>
+    </div>
+
+    <div class="cell">
+      <% if item.item_requests.any? { |r| r.approved } %>
+      <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
+      <% else %>
+      <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
+      <% end %>
+    </div>
+
+    <% else %>
+    <div class="cell">Posted</div>
+    <% end %> <!-- end if statement -->
+  </div>
+  <% end %> <!-- end loop -->
+</div>
 <% end %> <!-- end form -->
 </div>
-
 
 
