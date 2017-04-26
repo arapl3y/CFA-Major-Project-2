@@ -1,7 +1,6 @@
 <h1 align="center">
 <a href="http://imgur.com/QIUMAND"><img src="http://i.imgur.com/QIUMAND.png" width="100" height="100" /></a>
-</h1>
-<h1 align="center">
+
 Secret Source 
 </h1>
 
