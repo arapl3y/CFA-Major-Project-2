@@ -1,4 +1,3 @@
-<!-- Rearrange form and if statements -->
 
 <div class="table">
 
@@ -10,15 +9,6 @@
     <div class="cell">Approve</div>
   </div>
 
-
-
-  <% if @items.count <= 0 %>
-  <div class="table-row">
-    <div class="cell text-center">
-    <i>You have no items uploaded.</i>
-    </div>
-  </div>
-  <% end %>
 
   <% @items.each do |item| %>
     <div class="table-row">
@@ -71,5 +61,11 @@
   <% end %>
 
 </div>
+
+<% if @items.count <= 0 %>
+    <div class="well text-center">
+      <i>You have no items uploaded.</i>
+    </div>
+  <% end %>
 
 

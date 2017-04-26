@@ -32,8 +32,8 @@
 
       <!-- Must negate the whole answer, as opposed to approved: false, as it may not exist, !approved is invalid for the query -->
       <% if !current_user.is_informant && !@item.item_requests.find_by(approved: true) %>
-
-      <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
+        <p>You must get approval to download file and decrypt description...</p>
+        <%= link_to 'Request', request_item_path(@item), method: :put, class: 'btn btn-primary btn-xs btn-info' %>
 
       <% end %>
 
@@ -51,7 +51,7 @@
       <p class="item-description">Description: <i><%= @item.description + "..." + dummy_encryption %></i></p>
       <% end %>
 
-      <p class="item-meta">Uploaded by: <b><%= @item.user.username %></b> on <%= @item.created_at.to_date %></p>
+      <p class="item-meta">Uploaded by: <b><%= @item.user.username %></b>, <%= @item.item_time %></p>
 
       <% if @item.user == current_user %>
       <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-filled btn-primary btn-xs' %>
