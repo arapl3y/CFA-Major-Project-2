@@ -1,8 +1,16 @@
-# Secret Source 
+<h1 align="center">
+<a href="http://imgur.com/QIUMAND"><img src="http://i.imgur.com/QIUMAND.png" width="100" height="100" /></a>
+</h1>
+<h1 align="center">
+Secret Source 
+</h1>
+
+
 
 [![Build Status](https://travis-ci.org/arapl3y/CFA-Major-Project-2.svg?branch=master)](https://travis-ci.org/arapl3y/CFA-Major-Project-2) [![Code Climate](https://codeclimate.com/github/arapl3y/CFA-Major-Project-2/badges/gpa.svg)](https://codeclimate.com/github/arapl3y/CFA-Major-Project-2)
 
 Powered by Heroku on: https://secretsourcecfa.herokuapp.com, please use [Tor](https://www.torproject.org) or [Brave](https://brave.com) browsers for your own security.
+
 
 ## Background
 
@@ -50,6 +58,10 @@ I used Trello extensively when planning the project and separated the work load 
 ## Testing
 
 I used RSpec, FactoryGirl and Faker to run initial, basic tests. I didn't spend as much time as I would have liked on testing but will continue working on this project after the due date and will try to incorporate integration testing with Capybara.
+
+## Personal Highlights
+
+I really enjoyed this project and feel like MVC and Rails have really started to sink in. Some of my personal highlights were implementing XHR/AJAX into the search form, using Stripe subscriptions for users and hosting all uploaded files on s3. 
 
 ## Conclusion
 
