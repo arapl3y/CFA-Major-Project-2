@@ -524,11 +524,15 @@ nav.navbar-inverse {
 }
 
 .table-row {
+  width: 100%;
   display: table-row;
   background: #f6f6f6;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:nth-of-type(odd) {
     background: #e9e9e9;
+  }
+  &:nth-last-of-type(1) {
+    border-right: 0;
   }
   &.header {
     font-weight: 900;
@@ -539,24 +543,22 @@ nav.navbar-inverse {
       padding: 1em 0.5em !important;
       border-color: #149B4D;
     }
-
   }
   &.green {
     background: $cool-green;
   }
 }
 
+
 .cell {
-  padding: 18px;
-  display: table-cell;
-  border-right: 1px solid #ABA7A7;
+    padding: 18px;
+    display: table-cell;
+    border-right: 1px solid #ABA7A7;
   &.approval-cell {
-    width: 80px
-  }
-  &:nth-last-of-type(1) {
-    border-right: 0;
+    width: 80px;
   }
 }
+
 
 // Plans
 

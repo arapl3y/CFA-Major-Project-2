@@ -23,7 +23,7 @@ class ItemRequestsController < ApplicationController
     if @item_request.save && @item_request.approved?
       flash[:notice] = "Item request approved."
       redirect_to dashboard_path
-    elsif @item_request.save && !@item_request.approved
+    elsif @item_request.save && @item_request.approved == false
       flash[:notice] = "Item request disapproved."
       redirect_to dashboard_path
     else

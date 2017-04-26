@@ -1,6 +1,7 @@
 <!-- Rearrange form and if statements -->
-<%= form_for :item_request, url: update_item_requests_path, method: :patch do |f| %>
+
 <div class="table">
+
   <div class="table-row header green">
     <div class="cell text-center">#</div>
     <div class="cell">Uploaded</div>
@@ -10,55 +11,65 @@
   </div>
 
 
+
   <% if @items.count <= 0 %>
   <div class="table-row">
-    <div class="cell text-center><i>You have no items uploaded.</i></div>
+    <div class="cell text-center">
+    <i>You have no items uploaded.</i>
+    </div>
   </div>
   <% end %>
 
   <% @items.each do |item| %>
-  <div class="table-row">
-  <div class="cell text-center"><%= item.id %></div>
-    <div class="cell"><%= link_to item.title, item_path(item) %></div>
-
-
-    <% if item.item_requests.any? %>
-      <% if item.item_requests.find_by(approved: true) %>
-        <div class="cell">Approved</div>
-      <% else %>
-        <div class="cell">Requested</div>
-      <% end %>
+    <div class="table-row">
+      <div class="cell text-center">
+        <%= item.id %>
+      </div>
 
       <div class="cell">
-        <!-- Find if any item_requests have been approved -->
-        <% if item.item_requests.any? { |r| r.approved } %>
-          <!-- If there are, find that record and only show that one so that you can't approve multiple -->
-          <%= item.item_requests.where(approved: true).first.user.username %>
-          <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
-        <% else %>
-          <!-- If none are approved, choose which you would like to approve -->
-          <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
-        <% end %>
-          <%= f.hidden_field :item_id, value: item.id %>
+        <%= link_to item.title, item_path(item) %>
       </div>
 
-      <div class="cell approval-cell">
-        <% if item.item_requests.any? { |r| r.approved } %>
-          <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
-        <% else %>
-          <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
-        <% end %>
-      </div>
 
-    <% else %>
-      <div class="cell">Posted</div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-    <% end %> <!-- end if statement -->
-  </div>
-  <% end %> <!-- end loop -->
-</div>
-<% end %> <!-- end form -->
+      <% if item.item_requests.any? %>
+        <% if item.item_requests.find_by(approved: true) %>
+        <div class="cell">Approved</div>
+        <% else %>
+        <div class="cell">Requested</div>
+        <% end %>
+
+        <div class="cell">
+          <%= form_for :item_request, url: update_item_requests_path, method: :patch do |f| %>
+
+            <!-- Find if any item_requests have been approved -->
+            <% if item.item_requests.any? { |r| r.approved } %>
+            <!-- If there are, find that record and only show that one so that you can't approve multiple -->
+            <%= item.item_requests.where(approved: true).first.user.username %>
+            <%= f.hidden_field :user_id, value: item.item_requests.where(approved: true).first.user.id %>
+            <% else %>
+            <!-- If none are approved, choose which you would like to approve -->
+            <%= f.select :user_id, item.requesters.map { |requester| [requester.username, requester.id] }, class: 'form-control' %>
+            <% end %>
+            <%= f.hidden_field :item_id, value: item.id %>
+        </div>
+
+        <div class="cell approval-cell">
+            <% if item.item_requests.any? { |r| r.approved } %>
+              <%= f.submit 'Disapprove', class: 'btn btn-primary btn-filled' %>
+            <% else %>
+              <%= f.submit 'Approve', class: 'btn btn-primary btn-filled' %>
+            <% end %>
+          <% end %>
+        </div>
+
+      <% else %>
+        <div class="cell">Posted</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
 
 
