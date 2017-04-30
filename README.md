@@ -55,11 +55,11 @@ My initial Trello board, while convuluted and a little messy, shows my initial a
 ### Finalised Trello planning
 This finalised Trello board accompanies Secret Source in its current state properly. It outlines the features and technologies and is much simpler than the initial board. It also doesn't include any sprints because as my ideas changed and time began to melt away, I'm ashamed to say that Agile principles more or less went out the window.
 
-<a href="http://imgur.com/cU6pfsn"><img src="http://i.imgur.com/cU6pfsn.png" width="600px" height="400px" /></a>
+<a href="http://imgur.com/cU6pfsn"><img src="http://i.imgur.com/cU6pfsn.png" width="850px" height="600px" /></a>
 
 ### User journeys
 
-<a href="http://imgur.com/a9vA5Pt"><img src="http://i.imgur.com/a9vA5Pt.jpg" width="300px" height="400px" /></a>
+<a href="http://imgur.com/JIiBozy"><img src="http://i.imgur.com/JIiBozy.png" title="source: imgur.com" /></a>
 
 ### Wireframes
 <a href="http://imgur.com/772LQLU"><img src="http://i.imgur.com/772LQLU.jpg" width="300px" height="400px" /></a>
