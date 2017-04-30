@@ -82,6 +82,6 @@ If you have time to check out the app, please get in touch and let me know what 
 
 ## Credits
 
-Home page video from http://www.wedistill.io/videos/boxplant720
-Flask icon from http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/flask-icon.png
-All images uploaded at https://imgur.com
+Home page video from http://www.wedistill.io/videos/boxplant720<br>
+Flask icon from http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/flask-icon.png<br>
+All README images hosted by https://imgur.com<br>
