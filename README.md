@@ -67,24 +67,17 @@ This finalised Trello board accompanies Secret Source in its current state prope
 ### ERD
 <a href="http://imgur.com/C9VqBpT"><img src="http://i.imgur.com/C9VqBpT.jpg" width="300px" height="400px" /></a>
 
-### SCHEMA PLANNING
-<a href="http://imgur.com/32E5jma"><img src="http://i.imgur.com/32E5jma.jpg" width="300px" height="400px" /></a>
-
-## Tools and Methodologies
-
-I used Trello extensively when planning the project and separated the work load into two sprints. I integrated Travis CI and Codeclimate into my project to ensure code quality. I also used various linters while writing the code for my project such as ESLint and Rubocop. I used Git and Github voraciously and at the time of this writing I have 111 commits.
-
 ## Testing
 
 I used RSpec, FactoryGirl and Faker to run initial, basic tests. I didn't spend as much time as I would have liked on testing but will continue working on this project after the due date and will try to incorporate integration testing with Capybara.
 
 ## Personal Highlights
 
-I really enjoyed this project and feel like MVC and Rails have really started to sink in. Some of my personal highlights were implementing XHR/AJAX into the search form, using Stripe subscriptions for users and hosting all uploaded files on s3. 
+I really enjoyed this project and feel like MVC and Rails have started to sink in. Some of my personal highlights were implementing XHR/AJAX into the search form, using Stripe subscriptions for users and hosting all uploaded files on s3. 
 
 ## Conclusion
 
-If you have time to check out the app, please get in touch and let me know what you think. I had a lot of fun designing and building it so any suggestions regards improvements and features are welcome!
+If you have time to check out the app, please get in touch and let me know what you think. I had a lot of fun designing and building it so any suggestions regarding improvements and features are welcome!
 
 
 ## Credits
