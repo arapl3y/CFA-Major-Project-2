@@ -65,7 +65,7 @@ This finalised Trello board accompanies Secret Source in its current state prope
 <a href="http://imgur.com/772LQLU"><img src="http://i.imgur.com/772LQLU.jpg" width="300px" height="400px" /></a>
 
 ### ERD
-<a href="http://imgur.com/C9VqBpT"><img src="http://i.imgur.com/C9VqBpT.jpg" width="300px" height="400px" /></a>
+<a href="http://imgur.com/359VLQA"><img src="http://i.imgur.com/359VLQA.png" title="source: imgur.com" /></a>
 
 ## Testing
 
