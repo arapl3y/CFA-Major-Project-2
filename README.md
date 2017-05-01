@@ -49,8 +49,8 @@ Then navigate to http://localhost:3000 in the browser.
 ### Initial Trello planning
 My initial Trello board, while convuluted and a little messy, shows my initial aspirations for the project. The MVP list provides a glimpse into the simplifcation process from which the finalised Trello board elaborates. This board also shows my attempt to incorporate Agile methodologies through two sprints.
 
-<a href="http://imgur.com/VPItjt5"><img src="http://i.imgur.com/VPItjt5.png" width="400px" height="350px" /></a>
-<a href="http://imgur.com/LmQey8j"><img src="http://i.imgur.com/LmQey8j.png" width="400px" height="350px" /></a>
+<a href="http://imgur.com/VPItjt5"><img src="http://i.imgur.com/VPItjt5.png" width="420px" height="350px" /></a>
+<a href="http://imgur.com/LmQey8j"><img src="http://i.imgur.com/LmQey8j.png" width="420px" height="350px" /></a>
 
 ### Finalised Trello planning
 This finalised Trello board accompanies Secret Source in its current state properly. It outlines the features and technologies and is much simpler than the initial board. It also doesn't include any sprints because as my ideas changed and time began to melt away, I'm ashamed to say that Agile principles more or less went out the window.
@@ -62,7 +62,12 @@ This finalised Trello board accompanies Secret Source in its current state prope
 <a href="http://imgur.com/JIiBozy"><img src="http://i.imgur.com/JIiBozy.png" title="source: imgur.com" /></a>
 
 ### Wireframes
-<a href="http://imgur.com/772LQLU"><img src="http://i.imgur.com/772LQLU.jpg" width="300px" height="400px" /></a>
+
+<a href="http://imgur.com/Lr4fnDg"><img src="http://i.imgur.com/Lr4fnDg.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/SeJBevo"><img src="http://i.imgur.com/SeJBevo.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/nw1d0gS"><img src="http://i.imgur.com/nw1d0gS.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/b2FqOeB"><img src="http://i.imgur.com/b2FqOeB.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/BM4DCMx"><img src="http://i.imgur.com/BM4DCMx.png" title="source: imgur.com" /></a>
 
 ### ERD
 <a href="http://imgur.com/359VLQA"><img src="http://i.imgur.com/359VLQA.png" title="source: imgur.com" /></a>
